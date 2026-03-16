@@ -23,12 +23,23 @@ const initialAgents = [
     id: 'cartographer',
     name: 'The Cartographer',
     role: 'Visualization & Mapping',
-    status: 'building',
+    status: 'active',
     capabilities: ['Agent Visualization', 'Workflow Mapping', 'Stakeholder Reports'],
-    outputs: ['Interactive Dashboard', 'Agent Registry', 'Weekly Reports'],
+    outputs: ['Interactive Dashboard', 'Agent Registry', 'Weekly Reviews'],
     lastUpdate: '2026-03-16',
     description: 'Maps all AI agents and workflows for organizational visibility.',
-    workspaces: ['Web Dashboard', 'Agent Registry']
+    workspaces: ['Web Dashboard', 'Agent Registry', 'Notion Integration']
+  },
+  {
+    id: 'the-scout',
+    name: 'The Scout',
+    role: 'Competitive Intelligence Specialist',
+    status: 'active',
+    capabilities: ['Web Research', 'Competitive Analysis', 'Trend Identification', 'Newsletter Creation', 'Strategic Insights'],
+    outputs: ['Weekly Competitive Reports', 'Tax Tech Weekly Newsletter', 'Notion Intelligence Archives', 'Slack Notifications'],
+    lastUpdate: '2026-03-16',
+    description: 'Monitors 21 competitors and industry trends. Delivers weekly competitive intelligence and Tax Tech Weekly newsletter to team.',
+    workspaces: ['Notion Databases', 'Slack Channel', 'Web Research', 'Industry Monitoring']
   }
 ]
 
