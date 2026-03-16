@@ -62,6 +62,17 @@ const initialAgents = [
     lastUpdate: '2026-03-16',
     description: 'Connects sales reps with prospects through comprehensive pre-call intelligence. Researches company and personal backgrounds using public sources to optimize conversion.',
     workspaces: ['HubSpot/Intercom CRM', 'Public Web Research', 'Real-time Call Triggers', 'TBD: Specific integrations']
+  },
+  {
+    id: 'the-librarian',
+    name: 'The Librarian',
+    role: 'Sales Knowledge & Objection Specialist',
+    status: 'planned',
+    capabilities: ['Call Analysis', 'Objection Identification', 'Knowledge Gap Detection', 'Living Document Management', 'Pattern Recognition', 'Proactive Objection Prediction'],
+    outputs: ['Notion Knowledge Base Updates', 'CRM Objection Predictions', 'Sales Enablement Alerts', 'Weekly Reports (Future)', 'On-Demand Consultation'],
+    lastUpdate: '2026-03-16',
+    description: 'Curates institutional sales knowledge through real-time call analysis. Identifies objections, updates living documents, and predicts challenges based on prospect patterns.',
+    workspaces: ['Fireflies Integration', 'Notion Knowledge Base', 'CRM Auto-Updates', 'Post-Connector Workflow']
   }
 ]
 
