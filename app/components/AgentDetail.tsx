@@ -1,4 +1,4 @@
-import { X, Edit2, Save, Cancel, Users, CheckCircle, MapPin, Calendar } from 'lucide-react'
+import { X, Edit2, Save, Users, CheckCircle, MapPin, Calendar } from 'lucide-react'
 import { useState } from 'react'
 
 interface Agent {
@@ -92,7 +92,7 @@ export function AgentDetail({ agent, onClose, onUpdate }: AgentDetailProps) {
                   onClick={handleCancel}
                   className="flex items-center gap-1 px-3 py-1 bg-gray-500 text-white rounded hover:bg-gray-600"
                 >
-                  <Cancel className="w-4 h-4" />
+                  <X className="w-4 h-4" />
                   Cancel
                 </button>
               </>
