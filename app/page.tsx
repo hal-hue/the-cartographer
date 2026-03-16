@@ -40,6 +40,17 @@ const initialAgents = [
     lastUpdate: '2026-03-16',
     description: 'Monitors 21 competitors and industry trends. Delivers weekly competitive intelligence and Tax Tech Weekly newsletter to team.',
     workspaces: ['Notion Databases', 'Slack Channel', 'Web Research', 'Industry Monitoring']
+  },
+  {
+    id: 'the-voice',
+    name: 'The Voice',
+    role: 'Customer Intelligence Specialist',
+    status: 'planned',
+    capabilities: ['Feedback Aggregation', 'Sentiment Analysis', 'Usage Correlation', 'Pattern Recognition', 'Roadmap Alignment', 'Sprint Optimization'],
+    outputs: ['Sprint Planning Reports', 'Customer Insight Dashboards', 'Product Team Intelligence', 'TBD: Output formats to be defined'],
+    lastUpdate: '2026-03-16',
+    description: 'Amplifies customer voices into actionable product intelligence. Aggregates feedback from support, CRM, and feedback platforms to optimize development sprints.',
+    workspaces: ['Intercom Integration', 'HubSpot Connection', 'Canny Platform (Maybe)', 'TBD: Dependencies to be defined']
   }
 ]
 
