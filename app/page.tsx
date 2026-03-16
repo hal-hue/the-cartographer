@@ -51,6 +51,17 @@ const initialAgents = [
     lastUpdate: '2026-03-16',
     description: 'Amplifies customer voices into actionable product intelligence. Aggregates feedback from support, CRM, and feedback platforms to optimize development sprints.',
     workspaces: ['Intercom Integration', 'HubSpot Connection', 'Canny Platform (Maybe)', 'TBD: Dependencies to be defined']
+  },
+  {
+    id: 'the-connector',
+    name: 'The Connector',
+    role: 'Sales Intelligence Specialist',
+    status: 'planned',
+    capabilities: ['Pre-Call Research', 'Company Intelligence', 'Personal Background Analysis', 'Tax Pain Point Identification', 'Conversion Optimization', 'CRM Enrichment'],
+    outputs: ['CRM Brief Updates', 'Quick Reference Cards', 'On-Demand Deep Dives', 'Personalized Conversation Starters'],
+    lastUpdate: '2026-03-16',
+    description: 'Connects sales reps with prospects through comprehensive pre-call intelligence. Researches company and personal backgrounds using public sources to optimize conversion.',
+    workspaces: ['HubSpot/Intercom CRM', 'Public Web Research', 'Real-time Call Triggers', 'TBD: Specific integrations']
   }
 ]
 
