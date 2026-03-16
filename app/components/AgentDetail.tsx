@@ -5,7 +5,7 @@ interface Agent {
   id: string
   name: string
   role: string
-  status: 'active' | 'building' | 'planned' | 'deprecated'
+  status: string
   capabilities: string[]
   outputs: string[]
   lastUpdate: string
@@ -61,11 +61,11 @@ export function AgentDetail({ agent, onClose, onUpdate }: AgentDetailProps) {
                 agent.name
               )}
             </h2>
-            <span className={`inline-flex px-3 py-1 text-sm font-medium rounded-full border ${statusColors[agent.status]}`}>
+            <span className={`inline-flex px-3 py-1 text-sm font-medium rounded-full border ${statusColors[agent.status as keyof typeof statusColors] || statusColors.planned}`}>
               {isEditing ? (
                 <select
                   value={editData.status}
-                  onChange={(e) => setEditData({...editData, status: e.target.value as Agent['status']})}
+                  onChange={(e) => setEditData({...editData, status: e.target.value})}
                   className="bg-transparent border-none outline-none text-sm"
                 >
                   <option value="active">Active</option>

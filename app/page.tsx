@@ -34,7 +34,7 @@ const initialAgents = [
 
 export default function Dashboard() {
   const [agents, setAgents] = useState(initialAgents)
-  const [selectedAgent, setSelectedAgent] = useState(null)
+  const [selectedAgent, setSelectedAgent] = useState<any>(null)
   const [showAddModal, setShowAddModal] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -44,7 +44,7 @@ export default function Dashboard() {
     agent.capabilities.some(cap => cap.toLowerCase().includes(searchTerm.toLowerCase()))
   )
 
-  const addAgent = (agentData) => {
+  const addAgent = (agentData: any) => {
     const newAgent = {
       id: agentData.name.toLowerCase().replace(/\s+/g, '-'),
       ...agentData,
@@ -53,7 +53,7 @@ export default function Dashboard() {
     setAgents([...agents, newAgent])
   }
 
-  const updateAgent = (updatedAgent) => {
+  const updateAgent = (updatedAgent: any) => {
     setAgents(agents.map(agent => 
       agent.id === updatedAgent.id ? updatedAgent : agent
     ))

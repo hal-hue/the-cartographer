@@ -4,7 +4,7 @@ interface Agent {
   id: string
   name: string
   role: string
-  status: 'active' | 'building' | 'planned' | 'deprecated'
+  status: string
   capabilities: string[]
   outputs: string[]
   lastUpdate: string
@@ -41,7 +41,7 @@ const statusConfig = {
 }
 
 export function AgentCard({ agent, onClick }: AgentCardProps) {
-  const config = statusConfig[agent.status]
+  const config = statusConfig[agent.status as keyof typeof statusConfig] || statusConfig.planned
   const StatusIcon = config.icon
 
   return (
