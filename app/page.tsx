@@ -73,6 +73,17 @@ const initialAgents = [
     lastUpdate: '2026-03-16',
     description: 'Curates institutional sales knowledge through real-time call analysis. Identifies objections, updates living documents, and predicts challenges based on prospect patterns.',
     workspaces: ['Fireflies Integration', 'Notion Knowledge Base', 'CRM Auto-Updates', 'Post-Connector Workflow']
+  },
+  {
+    id: 'the-clerk',
+    name: 'The Clerk',
+    role: 'Administrative Project Manager',
+    status: 'planned',
+    capabilities: ['Meeting Analysis', 'OKR Progress Tracking', 'Task Status Updates', 'Action Item Extraction', 'Human-in-Loop Approval', 'Progress Intelligence'],
+    outputs: ['Notion Task Updates', 'Daily Change Summaries', 'OKR Progress Reports', 'Approval Workflows', 'Project Status Intelligence'],
+    lastUpdate: '2026-03-17',
+    description: 'Automates administrative project management by processing meeting transcripts and updating OKRs, tasks, and projects. Handles daily standups and weekly all-hands with approval workflows.',
+    workspaces: ['Fireflies Transcripts', 'Notion OKR Database', 'Approval Systems', 'Daily/Weekly Meeting Cadence']
   }
 ]
 
