@@ -10,12 +10,15 @@ export interface Agent {
   lastUpdate: string
   description: string
   workspaces: string[]
+  schedule?: string
+  health?: HealthStatus
   createdBy?: string
   dependencies?: string[]
   metrics?: AgentMetrics
 }
 
 export type AgentStatus = 'active' | 'building' | 'planned' | 'deprecated'
+export type HealthStatus = 'healthy' | 'warning' | 'error' | 'delivery-issues' | 'unknown'
 
 export interface AgentMetrics {
   tasksCompleted?: number
@@ -79,6 +82,35 @@ export const STATUS_CONFIG = {
     color: 'bg-gray-100 text-gray-800 border-gray-200',
     dot: 'bg-gray-500',
     label: 'Deprecated'
+  }
+} as const
+
+// Health status configuration for UI
+export const HEALTH_CONFIG = {
+  healthy: {
+    color: 'text-green-600',
+    icon: '✓',
+    label: 'Healthy'
+  },
+  warning: {
+    color: 'text-yellow-600',
+    icon: '⚠️',
+    label: 'Warning'
+  },
+  error: {
+    color: 'text-red-600',
+    icon: '❌',
+    label: 'Error'
+  },
+  'delivery-issues': {
+    color: 'text-orange-600',
+    icon: '📤',
+    label: 'Delivery Issues'
+  },
+  unknown: {
+    color: 'text-gray-600',
+    icon: '?',
+    label: 'Unknown'
   }
 } as const
 
