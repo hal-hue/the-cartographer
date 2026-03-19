@@ -6,40 +6,59 @@ import { AgentDetail } from './components/AgentDetail'
 import { AddAgentModal } from './components/AddAgentModal'
 import { Plus, Search, Filter } from 'lucide-react'
 
-// Sample data structure for agents
+// AI Agent Registry - Updated March 19, 2026
 const initialAgents = [
   {
     id: 'hal',
     name: 'Hal',
     role: 'Executive Assistant',
     status: 'active',
-    capabilities: ['Transcription', 'Decision Capture', 'Memory Management', 'Coordination'],
-    outputs: ['MEMORY.md', 'Daily transcripts', 'Meeting summaries'],
-    lastUpdate: '2026-03-16',
-    description: 'Institutional memory and central nervous system. Joins calls, captures decisions, surfaces insights.',
-    workspaces: ['Main Session', 'Memory Files', 'Heartbeat Monitoring']
+    capabilities: ['Transcription', 'Decision Capture', 'Memory Management', 'Agent Oversight', 'Heartbeat Monitoring'],
+    outputs: ['MEMORY.md', 'Daily transcripts', 'Meeting summaries', 'Agent status alerts'],
+    lastUpdate: '2026-03-19',
+    description: 'Institutional memory and central nervous system. Joins calls, captures decisions, surfaces insights, and provides oversight of all AI agents.',
+    workspaces: ['Main Session', 'Memory Files', 'Heartbeat Monitoring', 'Agent Ecosystem'],
+    schedule: 'Continuous (heartbeats every 1 hour)',
+    health: 'healthy'
   },
   {
     id: 'cartographer',
     name: 'The Cartographer',
-    role: 'Visualization & Mapping',
+    role: 'Ecosystem Visualization',
     status: 'active',
-    capabilities: ['Agent Visualization', 'Workflow Mapping', 'Stakeholder Reports'],
-    outputs: ['Interactive Dashboard', 'Agent Registry', 'Weekly Reviews'],
-    lastUpdate: '2026-03-16',
-    description: 'Maps all AI agents and workflows for organizational visibility.',
-    workspaces: ['Web Dashboard', 'Agent Registry', 'Notion Integration']
+    capabilities: ['Agent Visualization', 'Workflow Mapping', 'Dashboard Management', 'Change Detection'],
+    outputs: ['Interactive Dashboard', 'Agent Registry', 'GitHub Repository Updates', 'Vercel Deployments'],
+    lastUpdate: '2026-03-19',
+    description: 'Maintains real-time visibility into the AI agent ecosystem via dashboard. Maps all agents and workflows for organizational transparency.',
+    workspaces: ['Web Dashboard', 'GitHub Repository', 'Vercel Platform'],
+    schedule: 'Sundays 12:00 PM EST',
+    health: 'healthy'
   },
   {
     id: 'the-scout',
     name: 'The Scout',
     role: 'Competitive Intelligence Specialist',
     status: 'active',
-    capabilities: ['Web Research', 'Competitive Analysis', 'Trend Identification', 'Newsletter Creation', 'Strategic Insights'],
-    outputs: ['Weekly Competitive Reports', 'Tax Tech Weekly Newsletter', 'Notion Intelligence Archives', 'Slack Notifications'],
-    lastUpdate: '2026-03-16',
-    description: 'Monitors 21 competitors and industry trends. Delivers weekly competitive intelligence and Tax Tech Weekly newsletter to team.',
-    workspaces: ['Notion Databases', 'Slack Channel', 'Web Research', 'Industry Monitoring']
+    capabilities: ['Web Research', 'Competitive Analysis', 'Industry Monitoring', 'Newsletter Creation', 'Strategic Intelligence'],
+    outputs: ['Weekly Competitive Reports', 'Tax Tech Weekly Newsletter', 'Notion Intelligence Archives', 'Slack Summaries'],
+    lastUpdate: '2026-03-19',
+    description: 'Monitors 21+ competitors and industry trends. Delivers Tax Tech Weekly newsletter (Tuesdays) and competitive intelligence reports (Sundays).',
+    workspaces: ['Notion Databases', 'Slack Channels', 'Web Research', 'Industry Sources'],
+    schedule: 'Tuesdays 8:00 AM EST (Newsletter), Sundays 2:00 PM EST (Intelligence), Mondays 12:00 PM EST (Summary)',
+    health: 'delivery-issues'
+  },
+  {
+    id: 'the-scribe',
+    name: 'The Scribe',
+    role: 'Meeting Documentation Specialist',
+    status: 'active',
+    capabilities: ['Meeting Transcription', 'Structured Note-Taking', 'Action Item Extraction', 'Calendar Integration', 'Fireflies Processing'],
+    outputs: ['Structured Notion Meeting Notes', 'Action Item Tracking', 'Meeting Summaries'],
+    lastUpdate: '2026-03-19',
+    description: 'Processes Product & Platform Sync meeting transcripts from Fireflies into structured Notion documentation. Automatically created March 19, 2026.',
+    workspaces: ['Fireflies Transcripts', 'Notion Meeting Database', 'Calendar Integration'],
+    schedule: 'Fridays 3:00 PM EST (Product & Platform Sync)',
+    health: 'healthy'
   },
   {
     id: 'the-voice',
