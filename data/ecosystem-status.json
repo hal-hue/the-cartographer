@@ -1,14 +1,14 @@
 {
-  "lastUpdate": "2026-03-19T19:22:00Z",
-  "totalAgents": 4,
+  "lastUpdate": "2026-03-20T15:34:00Z",
+  "totalAgents": 5,
   "statusCounts": {
-    "active": 4,
+    "active": 5,
     "building": 0,
     "planned": 3,
     "deprecated": 0
   },
   "healthCounts": {
-    "healthy": 3,
+    "healthy": 4,
     "delivery-issues": 1,
     "warning": 0,
     "error": 0,
@@ -18,13 +18,18 @@
     {
       "level": "warning", 
       "agent": "The Scout",
-      "issue": "Slack delivery failures",
+      "issue": "Slack delivery failures on competitive intelligence and newsletter",
       "lastError": "Delivering to Slack requires target <channelId|user:ID|channel:ID>",
       "consecutiveErrors": 1,
       "nextRun": "2026-03-23T19:00:00Z"
     }
   ],
   "recentChanges": [
+    {
+      "date": "2026-03-20",
+      "type": "agent-added",
+      "description": "The Madison Ave agent created for comprehensive SEO analysis"
+    },
     {
       "date": "2026-03-19",
       "type": "agent-added",
@@ -51,6 +56,22 @@
       "agent": "The Scout",
       "nextRun": "2026-03-23T19:00:00Z", 
       "description": "Competitive intelligence report"
+    },
+    {
+      "agent": "The Madison Ave",
+      "nextRun": "2026-03-23T13:00:00Z",
+      "description": "Comprehensive SEO analysis"
+    },
+    {
+      "agent": "Tax Tech Weekly",
+      "nextRun": "2026-03-25T13:00:00Z",
+      "description": "Industry newsletter creation"
     }
-  ]
+  ],
+  "agentMetrics": {
+    "totalRuns": 157,
+    "successRate": 94.2,
+    "avgRunTime": 180000,
+    "lastFailure": "2026-03-19T19:32:00Z"
+  }
 }

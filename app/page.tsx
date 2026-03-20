@@ -6,7 +6,7 @@ import { AgentDetail } from './components/AgentDetail'
 import { AddAgentModal } from './components/AddAgentModal'
 import { Plus, Search, Filter } from 'lucide-react'
 
-// AI Agent Registry - Updated March 19, 2026
+// AI Agent Registry - Updated March 20, 2026
 const initialAgents = [
   {
     id: 'hal',
@@ -58,6 +58,19 @@ const initialAgents = [
     description: 'Processes Product & Platform Sync meeting transcripts from Fireflies into structured Notion documentation. Automatically created March 19, 2026.',
     workspaces: ['Fireflies Transcripts', 'Notion Meeting Database', 'Calendar Integration'],
     schedule: 'Fridays 3:00 PM EST (Product & Platform Sync)',
+    health: 'healthy'
+  },
+  {
+    id: 'the-madison-ave',
+    name: 'The Madison Ave',
+    role: 'SEO Analysis Specialist',
+    status: 'active',
+    capabilities: ['Technical SEO Analysis', 'Competitive Intelligence', 'Content Strategy Assessment', 'SWOT Analysis', 'Website Crawling', 'Market Research'],
+    outputs: ['Comprehensive SEO Reports', 'Competitive Analysis', 'Notion Strategy Documents', 'Technical Recommendations', 'Keyword Gap Analysis'],
+    lastUpdate: '2026-03-20',
+    description: 'Conducts in-depth SEO analysis of HeyDrew.com with competitive intelligence and strategic recommendations. Performs technical SEO audits and strategic positioning analysis.',
+    workspaces: ['Notion SEO Database', 'Web Research', 'Technical Analysis', 'Competitive Intelligence'],
+    schedule: 'Sundays 8:00 AM EST',
     health: 'healthy'
   },
   {
