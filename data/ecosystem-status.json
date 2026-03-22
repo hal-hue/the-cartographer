@@ -1,77 +1,261 @@
 {
-  "lastUpdate": "2026-03-20T15:34:00Z",
-  "totalAgents": 5,
+  "lastUpdate": "2026-03-22T17:00:00Z",
+  "totalAgents": 6,
   "statusCounts": {
     "active": 5,
     "building": 0,
-    "planned": 3,
-    "deprecated": 0
+    "planned": 0,
+    "deprecated": 1
   },
   "healthCounts": {
-    "healthy": 4,
-    "delivery-issues": 1,
-    "warning": 0,
+    "healthy": 2,
+    "delivery-issues": 3,
+    "warning": 1,
     "error": 0,
     "unknown": 0
   },
   "alerts": [
     {
-      "level": "warning", 
-      "agent": "The Scout",
-      "issue": "Slack delivery failures on competitive intelligence and newsletter",
+      "level": "warning",
+      "agent": "The Scout (Competitive Intel)",
+      "issue": "Slack delivery configuration needs channel ID update",
       "lastError": "Delivering to Slack requires target <channelId|user:ID|channel:ID>",
       "consecutiveErrors": 1,
-      "nextRun": "2026-03-23T19:00:00Z"
+      "nextRun": "2026-03-23T19:00:00Z",
+      "jobId": "bf1c8f20-392b-4f07-b135-edac51d0b851"
+    },
+    {
+      "level": "warning", 
+      "agent": "Tax Tech Weekly",
+      "issue": "Slack delivery configuration needs channel ID update",
+      "lastError": "Delivering to Slack requires target <channelId|user:ID|channel:ID>",
+      "consecutiveErrors": 1,
+      "nextRun": "2026-03-25T13:00:00Z",
+      "jobId": "848737cb-dc39-48a5-a54b-420b81bbdc22"
+    },
+    {
+      "level": "warning",
+      "agent": "The Scribe", 
+      "issue": "Slack delivery configuration needs channel ID update",
+      "lastError": "Delivering to Slack requires target <channelId|user:ID|channel:ID>",
+      "consecutiveErrors": 2,
+      "nextRun": "2026-03-28T20:00:00Z",
+      "jobId": "b36d667a-2b25-460b-94a4-1024c96450da"
+    },
+    {
+      "level": "info",
+      "agent": "The Madison Ave",
+      "issue": "Channel not found error - likely transient",
+      "lastError": "Error: An API error occurred: channel_not_found", 
+      "consecutiveErrors": 1,
+      "nextRun": "2026-03-30T13:00:00Z",
+      "jobId": "a5472d68-dd95-4cea-b9b7-1b15a1f01fc2"
     }
   ],
   "recentChanges": [
     {
+      "date": "2026-03-22",
+      "type": "health-update",
+      "description": "System-wide Slack delivery configuration issues identified - agents creating reports but delivery failing"
+    },
+    {
+      "date": "2026-03-22",
+      "type": "agent-status",
+      "description": "Deprecated test Fireflies agent removed from active roster"
+    },
+    {
+      "date": "2026-03-22",
+      "type": "ecosystem-review",
+      "description": "Comprehensive agent status review completed - 5 active production agents identified"
+    },
+    {
       "date": "2026-03-20",
-      "type": "agent-added",
+      "type": "agent-added", 
       "description": "The Madison Ave agent created for comprehensive SEO analysis"
     },
     {
       "date": "2026-03-19",
       "type": "agent-added",
-      "description": "The Scribe agent created for meeting documentation"
-    },
-    {
-      "date": "2026-03-19", 
-      "type": "health-update",
-      "description": "The Scout experiencing delivery issues to Slack channels"
+      "description": "The Scribe agent created for meeting documentation" 
     }
   ],
   "nextScheduledRuns": [
     {
-      "agent": "The Scribe",
-      "nextRun": "2026-03-21T20:00:00Z",
-      "description": "Product & Platform Sync meeting notes"
-    },
-    {
-      "agent": "The Cartographer", 
-      "nextRun": "2026-03-23T17:00:00Z",
-      "description": "Weekly ecosystem review"
-    },
-    {
-      "agent": "The Scout",
-      "nextRun": "2026-03-23T19:00:00Z", 
-      "description": "Competitive intelligence report"
-    },
-    {
-      "agent": "The Madison Ave",
-      "nextRun": "2026-03-23T13:00:00Z",
-      "description": "Comprehensive SEO analysis"
+      "agent": "The Scout (Monday Summary)",
+      "nextRun": "2026-03-24T17:00:00Z",
+      "description": "Monday competitive intelligence summary",
+      "jobId": "f67f659d-77ae-47e8-83e2-b1157609767a"
     },
     {
       "agent": "Tax Tech Weekly",
       "nextRun": "2026-03-25T13:00:00Z",
-      "description": "Industry newsletter creation"
+      "description": "Industry newsletter creation",
+      "jobId": "848737cb-dc39-48a5-a54b-420b81bbdc22"
+    },
+    {
+      "agent": "The Scribe",
+      "nextRun": "2026-03-28T20:00:00Z",
+      "description": "Product & Platform Sync meeting notes",
+      "jobId": "b36d667a-2b25-460b-94a4-1024c96450da"
+    },
+    {
+      "agent": "The Cartographer",
+      "nextRun": "2026-03-30T17:00:00Z", 
+      "description": "Weekly ecosystem review",
+      "jobId": "917bf291-f42f-4e5a-bb8b-4d878f9ae946"
+    },
+    {
+      "agent": "The Scout (Competitive Intel)",
+      "nextRun": "2026-03-30T19:00:00Z",
+      "description": "Weekly competitive intelligence report",
+      "jobId": "bf1c8f20-392b-4f07-b135-edac51d0b851"
+    },
+    {
+      "agent": "The Madison Ave",
+      "nextRun": "2026-03-30T13:00:00Z",
+      "description": "Comprehensive SEO analysis",
+      "jobId": "a5472d68-dd95-4cea-b9b7-1b15a1f01fc2"
+    }
+  ],
+  "agentDetails": [
+    {
+      "name": "Hal",
+      "id": "executive-assistant",
+      "role": "Executive Assistant & Institutional Memory",
+      "status": "active",
+      "health": "healthy",
+      "schedule": "Continuous (heartbeats hourly)",
+      "outputs": [
+        "Slack alerts", 
+        "Memory updates",
+        "Session monitoring",
+        "Agent oversight"
+      ],
+      "capabilities": [
+        "Institutional memory management",
+        "Agent ecosystem oversight", 
+        "Executive assistance",
+        "Proactive monitoring"
+      ],
+      "description": "Central nervous system of the organization with visibility across all AI agents"
+    },
+    {
+      "name": "The Scout",
+      "id": "competitive-intelligence",
+      "role": "Competitive Intelligence & Market Research", 
+      "status": "active",
+      "health": "delivery-issues",
+      "schedule": "Sundays 2:00 PM EST (competitive intel), Mondays 12:00 PM EST (summary)",
+      "outputs": [
+        "Notion competitive analysis reports",
+        "Slack competitive intelligence summaries",
+        "Tax Tech Weekly newsletter"
+      ],
+      "capabilities": [
+        "Competitive analysis across 21 tracked companies",
+        "Market intelligence gathering",
+        "Industry newsletter creation",
+        "Strategic insights generation"
+      ],
+      "description": "Comprehensive market intelligence agent tracking competitive landscape",
+      "issues": ["Slack delivery configuration needs channel ID updates"]
+    },
+    {
+      "name": "Tax Tech Weekly",
+      "id": "newsletter-agent",
+      "role": "Industry Newsletter Creation",
+      "status": "active", 
+      "health": "delivery-issues",
+      "schedule": "Tuesdays 8:00 AM EST",
+      "outputs": [
+        "Tax Tech Weekly newsletter in Notion",
+        "Slack industry updates"
+      ],
+      "capabilities": [
+        "Industry research and analysis",
+        "Newsletter content creation",
+        "Market trend identification",
+        "Funding and product launch tracking"
+      ],
+      "description": "Specialized agent for creating weekly tax technology industry newsletter",
+      "issues": ["Slack delivery configuration needs channel ID updates"]
+    },
+    {
+      "name": "The Cartographer", 
+      "id": "ecosystem-visualization",
+      "role": "Agent Ecosystem Documentation",
+      "status": "active",
+      "health": "healthy",
+      "schedule": "Sundays 12:00 PM EST",
+      "outputs": [
+        "GitHub repository updates",
+        "Vercel dashboard deployment",
+        "Agent ecosystem documentation"
+      ],
+      "capabilities": [
+        "Agent status monitoring",
+        "Dashboard data management", 
+        "Change detection and reporting",
+        "Ecosystem visualization"
+      ],
+      "description": "Maintains real-time visibility into the AI agent ecosystem via dashboard"
+    },
+    {
+      "name": "The Scribe",
+      "id": "meeting-documentation", 
+      "role": "Automated Meeting Documentation",
+      "status": "active",
+      "health": "delivery-issues",
+      "schedule": "Fridays 3:00 PM EST",
+      "outputs": [
+        "Structured Notion meeting notes",
+        "Meeting transcripts with action items",
+        "Slack meeting summaries"
+      ],
+      "capabilities": [
+        "Fireflies transcript processing",
+        "Meeting documentation automation",
+        "Action item extraction",
+        "Structured note creation"
+      ],
+      "description": "Processes Product & Platform Sync meetings from Fireflies transcripts",
+      "issues": ["Slack delivery configuration needs channel ID updates"]
+    },
+    {
+      "name": "The Madison Ave",
+      "id": "seo-analysis",
+      "role": "Comprehensive SEO Analysis",
+      "status": "active", 
+      "health": "warning",
+      "schedule": "Sundays 8:00 AM EST",
+      "outputs": [
+        "Comprehensive SEO analysis reports in Notion",
+        "SWOT analysis with competitive intelligence", 
+        "Strategic SEO recommendations"
+      ],
+      "capabilities": [
+        "Technical SEO assessment",
+        "Competitive SEO analysis",
+        "Content strategy evaluation", 
+        "SWOT analysis creation"
+      ],
+      "description": "Conducts in-depth SEO analysis with competitive intelligence and strategic recommendations",
+      "issues": ["Intermittent channel not found errors"]
     }
   ],
   "agentMetrics": {
-    "totalRuns": 157,
-    "successRate": 94.2,
-    "avgRunTime": 180000,
-    "lastFailure": "2026-03-19T19:32:00Z"
+    "totalRuns": 189,
+    "successRate": 87.3,
+    "avgRunTime": 165000,
+    "lastFailure": "2026-03-22T13:00:00Z",
+    "criticalIssues": 0,
+    "activeDeliveryIssues": 4
+  },
+  "systemHealth": {
+    "overallStatus": "operational",
+    "maintenanceNeeded": true,
+    "criticalAlerts": 0,
+    "warnings": 4,
+    "issuesSummary": "System-wide Slack delivery configuration needs channel ID updates. All agents creating content successfully but delivery mechanisms require attention."
   }
 }
