@@ -6,7 +6,7 @@ import { AgentDetail } from './components/AgentDetail'
 import { AddAgentModal } from './components/AddAgentModal'
 import { Plus, Search, Filter } from 'lucide-react'
 
-// AI Agent Registry - Updated March 20, 2026
+// AI Agent Registry - Updated March 29, 2026
 const initialAgents = [
   {
     id: 'hal',
@@ -41,7 +41,7 @@ const initialAgents = [
     status: 'active',
     capabilities: ['Web Research', 'Competitive Analysis', 'Industry Monitoring', 'Newsletter Creation', 'Strategic Intelligence'],
     outputs: ['Weekly Competitive Reports', 'Tax Tech Weekly Newsletter', 'Notion Intelligence Archives', 'Slack Summaries'],
-    lastUpdate: '2026-03-19',
+    lastUpdate: '2026-03-29',
     description: 'Monitors 21+ competitors and industry trends. Delivers Tax Tech Weekly newsletter (Tuesdays) and competitive intelligence reports (Sundays).',
     workspaces: ['Notion Databases', 'Slack Channels', 'Web Research', 'Industry Sources'],
     schedule: 'Tuesdays 8:00 AM EST (Newsletter), Sundays 2:00 PM EST (Intelligence), Mondays 12:00 PM EST (Summary)',
@@ -54,7 +54,7 @@ const initialAgents = [
     status: 'active',
     capabilities: ['Meeting Transcription', 'Structured Note-Taking', 'Action Item Extraction', 'Calendar Integration', 'Fireflies Processing'],
     outputs: ['Structured Notion Meeting Notes', 'Action Item Tracking', 'Meeting Summaries'],
-    lastUpdate: '2026-03-19',
+    lastUpdate: '2026-03-29',
     description: 'Processes Product & Platform Sync meeting transcripts from Fireflies into structured Notion documentation. Automatically created March 19, 2026.',
     workspaces: ['Fireflies Transcripts', 'Notion Meeting Database', 'Calendar Integration'],
     schedule: 'Fridays 3:00 PM EST (Product & Platform Sync)',
@@ -67,10 +67,23 @@ const initialAgents = [
     status: 'active',
     capabilities: ['Technical SEO Analysis', 'Competitive Intelligence', 'Content Strategy Assessment', 'SWOT Analysis', 'Website Crawling', 'Market Research'],
     outputs: ['Comprehensive SEO Reports', 'Competitive Analysis', 'Notion Strategy Documents', 'Technical Recommendations', 'Keyword Gap Analysis'],
-    lastUpdate: '2026-03-20',
+    lastUpdate: '2026-03-29',
     description: 'Conducts in-depth SEO analysis of HeyDrew.com with competitive intelligence and strategic recommendations. Performs technical SEO audits and strategic positioning analysis.',
     workspaces: ['Notion SEO Database', 'Web Research', 'Technical Analysis', 'Competitive Intelligence'],
     schedule: 'Sundays 8:00 AM EST',
+    health: 'delivery-issues'
+  },
+  {
+    id: 'integration-health-monitor',
+    name: 'Integration Health Monitor',
+    role: 'Infrastructure Health & Connectivity Monitoring',
+    status: 'active',
+    capabilities: ['Integration Monitoring', 'System Health Assessment', 'Connectivity Testing', 'Auto-Recovery', 'Infrastructure Alerts'],
+    outputs: ['System Health Reports', 'Connectivity Alerts', 'Infrastructure Status Updates', 'Recovery Notifications'],
+    lastUpdate: '2026-03-29',
+    description: 'Monitors system integrations and infrastructure health with automatic recovery capabilities. Added March 24, 2026 to ensure proactive system monitoring.',
+    workspaces: ['System Integrations', 'Health Dashboards', 'Alert Systems', 'Recovery Workflows'],
+    schedule: 'Daily 7:00 AM & 7:00 PM EST',
     health: 'healthy'
   },
   {
