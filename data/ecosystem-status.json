@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-04-19T16:00:00Z",
+  "lastUpdate": "2026-04-28T17:19:00Z",
   "totalAgents": 7,
   "statusCounts": {
     "active": 7,
@@ -8,14 +8,39 @@
     "deprecated": 1
   },
   "healthCounts": {
-    "healthy": 7,
-    "delivery-issues": 0,
+    "healthy": 1,
+    "delivery-issues": 5,
     "warning": 0,
-    "error": 0,
+    "error": 1,
     "unknown": 0
   },
-  "alerts": [],
+  "alerts": [
+    {
+      "severity": "critical",
+      "agent": "Integration Health Monitor",
+      "message": "12 consecutive failures due to billing/API credit issue",
+      "since": "2026-04-19",
+      "action": "Requires API billing resolution"
+    },
+    {
+      "severity": "high",
+      "agent": "Multiple Agents",
+      "message": "Channel delivery configuration issue - 'Unsupported channel' errors affecting The Scout, Tax Tech Weekly, The Scribe, and The Madison Ave",
+      "since": "2026-04-25",
+      "action": "Slack channel configuration needs review"
+    }
+  ],
   "recentChanges": [
+    {
+      "date": "2026-04-28",
+      "type": "health-degradation",
+      "description": "Integration Health Monitor at 12 consecutive errors - billing issue persisting since April 19"
+    },
+    {
+      "date": "2026-04-28",
+      "type": "delivery-issues",
+      "description": "Widespread 'Unsupported channel' delivery errors affecting 5 of 7 agents"
+    },
     {
       "date": "2026-04-19",
       "type": "ecosystem-review",
@@ -39,60 +64,67 @@
   ],
   "nextScheduledRuns": [
     {
-      "agent": "The Scout (Competitive Intelligence)",
-      "nextRun": "2026-04-19T18:00:00Z",
-      "description": "Comprehensive weekly competitive intelligence research",
-      "jobId": "bf1c8f20-392b-4f07-b135-edac51d0b851",
-      "schedule": "cron 0 14 * * 0 @ America/New_York",
-      "timeUntil": "in 2h"
-    },
-    {
       "agent": "Integration Health Monitor",
-      "nextRun": "2026-04-19T23:05:00Z",
+      "nextRun": "2026-04-28T23:05:00Z",
       "description": "System health check and connectivity monitoring",
       "jobId": "e13b88b7-9019-4570-a897-cbb494ff6558",
       "schedule": "cron 0 7,19 * * * @ America/New_York (staggered)",
-      "timeUntil": "in 7h"
-    },
-    {
-      "agent": "The Scout (Monday Summary)",
-      "nextRun": "2026-04-21T16:00:00Z",
-      "description": "Monday competitive intelligence summary delivery",
-      "jobId": "f67f659d-77ae-47e8-83e2-b1157609767a",
-      "schedule": "cron 0 12 * * 1 @ America/New_York",
-      "timeUntil": "in 2d"
-    },
-    {
-      "agent": "Tax Tech Weekly Newsletter",
-      "nextRun": "2026-04-22T12:00:00Z",
-      "description": "Comprehensive tax technology industry newsletter",
-      "jobId": "848737cb-dc39-48a5-a54b-420b81bbdc22",
-      "schedule": "cron 0 8 * * 2 @ America/New_York",
-      "timeUntil": "in 3d"
+      "timeUntil": "in 6h",
+      "status": "error"
     },
     {
       "agent": "The Scribe (Meeting Documentation)",
-      "nextRun": "2026-04-25T19:00:00Z",
+      "nextRun": "2026-05-01T19:00:00Z",
       "description": "Product & Platform Sync meeting notes processing",
       "jobId": "b36d667a-2b25-460b-94a4-1024c96450da",
       "schedule": "cron 0 15 * * 5 @ America/New_York",
-      "timeUntil": "in 6d"
+      "timeUntil": "in 3d",
+      "status": "delivery-issues"
     },
     {
       "agent": "The Cartographer (Ecosystem Visualization)",
-      "nextRun": "2026-04-26T16:00:00Z",
+      "nextRun": "2026-05-03T16:00:00Z",
       "description": "Agent ecosystem dashboard update and review",
       "jobId": "917bf291-f42f-4e5a-bb8b-4d878f9ae946",
       "schedule": "cron 0 12 * * 0 @ America/New_York",
-      "timeUntil": "in 7d"
+      "timeUntil": "in 5d",
+      "status": "healthy"
     },
     {
       "agent": "The Madison Ave (SEO Analysis)",
-      "nextRun": "2026-04-27T12:00:00Z",
+      "nextRun": "2026-05-04T12:00:00Z",
       "description": "Comprehensive SEO analysis with competitive intelligence",
       "jobId": "a5472d68-dd95-4cea-b9b7-1b15a1f01fc2",
       "schedule": "cron 0 8 * * 0 @ America/New_York",
-      "timeUntil": "in 8d"
+      "timeUntil": "in 6d",
+      "status": "delivery-issues"
+    },
+    {
+      "agent": "The Scout (Competitive Intelligence)",
+      "nextRun": "2026-05-03T18:00:00Z",
+      "description": "Comprehensive weekly competitive intelligence research",
+      "jobId": "bf1c8f20-392b-4f07-b135-edac51d0b851",
+      "schedule": "cron 0 14 * * 0 @ America/New_York",
+      "timeUntil": "in 5d",
+      "status": "delivery-issues"
+    },
+    {
+      "agent": "The Scout (Monday Summary)",
+      "nextRun": "2026-05-04T16:00:00Z",
+      "description": "Monday competitive intelligence summary delivery",
+      "jobId": "f67f659d-77ae-47e8-83e2-b1157609767a",
+      "schedule": "cron 0 12 * * 1 @ America/New_York",
+      "timeUntil": "in 6d",
+      "status": "delivery-issues"
+    },
+    {
+      "agent": "Tax Tech Weekly Newsletter",
+      "nextRun": "2026-05-05T12:00:00Z",
+      "description": "Comprehensive tax technology industry newsletter",
+      "jobId": "848737cb-dc39-48a5-a54b-420b81bbdc22",
+      "schedule": "cron 0 8 * * 2 @ America/New_York",
+      "timeUntil": "in 7d",
+      "status": "delivery-issues"
     }
   ],
   "agentDetails": [
@@ -116,7 +148,7 @@
         "Proactive issue detection and escalation"
       ],
       "description": "Central nervous system of the organization with visibility across all AI agents",
-      "lastUpdate": "2026-04-19"
+      "lastUpdate": "2026-04-28"
     },
     {
       "name": "The Cartographer",
@@ -137,15 +169,15 @@
         "Real-time ecosystem visualization"
       ],
       "description": "Maintains real-time visibility into the AI agent ecosystem via comprehensive dashboard",
-      "lastUpdate": "2026-04-19",
+      "lastUpdate": "2026-04-28",
       "jobId": "917bf291-f42f-4e5a-bb8b-4d878f9ae946",
       "repository": "https://github.com/hal-hue/the-cartographer",
       "dashboard": "the-cartographer-pd4m74tut-hal-7944s-projects.vercel.app",
       "metrics": {
-        "totalRuns": 6,
-        "successRate": 83.3,
+        "totalRuns": 7,
+        "successRate": 71.4,
         "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
+        "lastRunStatus": "running",
         "lastDurationMs": 523685
       }
     },
@@ -154,7 +186,7 @@
       "id": "competitive-intelligence",
       "role": "Market Intelligence & Competitive Analysis",
       "status": "active",
-      "health": "healthy",
+      "health": "delivery-issues",
       "schedule": "Sundays 2:00 PM EST (analysis), Mondays 12:00 PM EST (summary)",
       "outputs": [
         "Notion competitive analysis reports",
@@ -168,14 +200,15 @@
         "High-priority competitor monitoring"
       ],
       "description": "Comprehensive market intelligence agent tracking competitive landscape and delivering strategic insights",
-      "lastUpdate": "2026-04-19",
+      "lastUpdate": "2026-04-28",
       "jobIds": ["bf1c8f20-392b-4f07-b135-edac51d0b851", "f67f659d-77ae-47e8-83e2-b1157609767a"],
       "metrics": {
-        "totalRuns": 5,
-        "successRate": 60,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "delivered"
+        "totalRuns": 7,
+        "successRate": 57.1,
+        "consecutiveErrors": 2,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "unsupported-channel",
+        "lastError": "Unsupported channel: channel:hal-agent"
       }
     },
     {
@@ -183,7 +216,7 @@
       "id": "newsletter-agent",
       "role": "Industry Newsletter Creation",
       "status": "active",
-      "health": "healthy",
+      "health": "delivery-issues",
       "schedule": "Tuesdays 8:00 AM EST",
       "outputs": [
         "Tax Tech Weekly newsletter in Notion",
@@ -196,14 +229,16 @@
         "Funding and product launch tracking"
       ],
       "description": "Specialized agent for creating weekly tax technology industry newsletter with actionable intelligence",
-      "lastUpdate": "2026-04-19",
+      "lastUpdate": "2026-04-28",
       "jobId": "848737cb-dc39-48a5-a54b-420b81bbdc22",
       "metrics": {
-        "totalRuns": 9,
-        "successRate": 66.7,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "delivered"
+        "totalRuns": 11,
+        "successRate": 63.6,
+        "consecutiveErrors": 2,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "unsupported-channel",
+        "lastError": "Unsupported channel: c0aabtxfm6d",
+        "lastDurationMs": 370214
       }
     },
     {
@@ -211,7 +246,7 @@
       "id": "meeting-documentation",
       "role": "Automated Meeting Documentation",
       "status": "active",
-      "health": "healthy",
+      "health": "delivery-issues",
       "schedule": "Fridays 3:00 PM EST",
       "outputs": [
         "Structured Notion meeting notes with action items",
@@ -225,15 +260,16 @@
         "Structured note creation with templates"
       ],
       "description": "Processes Product & Platform Sync meetings from Fireflies transcripts into comprehensive structured documentation",
-      "lastUpdate": "2026-04-19",
+      "lastUpdate": "2026-04-28",
       "jobId": "b36d667a-2b25-460b-94a4-1024c96450da",
       "addedDate": "2026-03-19",
       "metrics": {
-        "totalRuns": 8,
-        "successRate": 62.5,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "delivered"
+        "totalRuns": 10,
+        "successRate": 60,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "unsupported-channel",
+        "lastError": "Unsupported channel: channel:hal-agent"
       }
     },
     {
@@ -241,7 +277,7 @@
       "id": "seo-analysis",
       "role": "Comprehensive SEO Analysis & Strategy",
       "status": "active",
-      "health": "healthy",
+      "health": "delivery-issues",
       "schedule": "Sundays 8:00 AM EST",
       "outputs": [
         "Comprehensive SEO analysis reports in Notion",
@@ -255,15 +291,16 @@
         "SWOT analysis creation and strategic insights"
       ],
       "description": "Conducts comprehensive SEO analysis with competitive intelligence and delivers strategic recommendations for HeyDrew.com optimization",
-      "lastUpdate": "2026-04-19",
+      "lastUpdate": "2026-04-28",
       "jobId": "a5472d68-dd95-4cea-b9b7-1b15a1f01fc2",
       "addedDate": "2026-03-20",
       "metrics": {
-        "totalRuns": 6,
-        "successRate": 66.7,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "delivered"
+        "totalRuns": 8,
+        "successRate": 62.5,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "unsupported-channel",
+        "lastError": "Unsupported channel: channel:hal-agent"
       }
     },
     {
@@ -271,7 +308,7 @@
       "id": "health-monitoring",
       "role": "Infrastructure Health & Connectivity Monitoring",
       "status": "active",
-      "health": "healthy",
+      "health": "error",
       "schedule": "Daily 7:00 AM & 7:00 PM EST (staggered)",
       "outputs": [
         "System health status reports",
@@ -285,43 +322,46 @@
         "Automated recovery processes"
       ],
       "description": "Monitors system integrations and infrastructure health with automatic recovery capabilities",
-      "lastUpdate": "2026-04-19",
+      "lastUpdate": "2026-04-28",
       "jobId": "e13b88b7-9019-4570-a897-cbb494ff6558",
       "addedDate": "2026-03-24",
       "metrics": {
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "delivered",
-        "lastDurationMs": 15182
+        "consecutiveErrors": 12,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 5807,
+        "lastError": "LLM request rejected: billing/API credit issue",
+        "lastErrorReason": "billing"
       }
     }
   ],
   "agentMetrics": {
     "totalActiveAgents": 7,
     "totalEnabledJobs": 7,
-    "totalDisabledJobs": 1,
-    "overallSuccessRate": 92.3,
-    "contentSuccessRate": 100.0,
-    "deliverySuccessRate": 85.7,
-    "avgRunTimeMs": 350000,
-    "criticalIssues": 0,
-    "activeDeliveryIssues": 0
+    "totalDisabledJobs": 0,
+    "overallSuccessRate": 28.6,
+    "contentSuccessRate": 60,
+    "deliverySuccessRate": 14.3,
+    "avgRunTimeMs": 200000,
+    "criticalIssues": 1,
+    "activeDeliveryIssues": 5
   },
   "systemHealth": {
-    "overallStatus": "fully-operational",
-    "maintenanceNeeded": false,
-    "criticalAlerts": 0,
-    "warnings": 0,
-    "issuesSummary": "All 7 agents fully operational with zero consecutive errors. API credit issues resolved. All delivery configurations functioning correctly."
+    "overallStatus": "degraded",
+    "maintenanceNeeded": true,
+    "criticalAlerts": 1,
+    "warnings": 5,
+    "issuesSummary": "1 critical issue (Integration Health Monitor - billing), 5 agents with Slack channel delivery configuration errors. Immediate attention required for channel configuration and API billing."
   },
   "infrastructureStatus": {
-    "lastReview": "2026-04-19T16:00:00Z",
+    "lastReview": "2026-04-28T17:19:00Z",
     "activeAgentCount": 7,
     "plannedAgentCount": 4,
     "deprecatedAgentCount": 1,
-    "systemStability": "Excellent - 100% agent health",
-    "apiCreditsStatus": "Healthy - recovered from April 5 credit limitation",
-    "nextMajorReview": "2026-04-26T16:00:00Z"
+    "systemStability": "Degraded - 6 of 7 agents experiencing errors",
+    "apiCreditsStatus": "Issue - billing error affecting Integration Health Monitor",
+    "channelConfigStatus": "Issue - 'Unsupported channel' errors affecting 5 agents",
+    "nextMajorReview": "2026-05-03T16:00:00Z"
   },
   "historicalMilestones": [
     {
@@ -347,6 +387,10 @@
     {
       "date": "2026-04-19",
       "event": "100% agent health achieved - full ecosystem operational"
+    },
+    {
+      "date": "2026-04-28",
+      "event": "Widespread delivery issues detected - 'Unsupported channel' errors and billing issue affecting 6 of 7 agents"
     }
   ]
 }
