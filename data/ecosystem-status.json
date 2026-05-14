@@ -1,117 +1,131 @@
 {
-  "lastUpdate": "2026-04-12T16:00:00Z",
+  "lastUpdate": "2026-05-14T18:52:00Z",
   "totalAgents": 7,
   "statusCounts": {
     "active": 7,
     "building": 0,
-    "planned": 3,
-    "deprecated": 1
+    "planned": 4,
+    "deprecated": 0
   },
   "healthCounts": {
     "healthy": 4,
-    "delivery-issues": 2,
-    "api-credit-issue": 1,
+    "error": 3,
+    "delivery-issues": 0,
+    "api-credit-issue": 0,
     "warning": 0,
-    "error": 0,
     "unknown": 0
   },
   "alerts": [
     {
-      "level": "info",
-      "agent": "The Cartographer",
-      "issue": "API credit limitation resolved and ecosystem updated",
-      "description": "Successfully running dashboard update after previous credit-related interruption",
-      "resolution": "API credits available - continuing normal operation",
-      "timestamp": "2026-04-12T16:00:00Z"
-    },
-    {
-      "level": "warning",
+      "level": "error",
       "agent": "The Scout (Competitive Intelligence)",
-      "issue": "Consecutive delivery failures and API credit issues",
-      "description": "Sunday analysis experiencing delivery failures plus recent API credit errors",
-      "lastError": "LLM request rejected: Third-party apps now draw from your extra usage, not your plan limits. We've added a $100 credit to get you started. Claim it at claude.ai/settings/usage and keep going.",
-      "consecutiveErrors": "4 errors",
-      "nextRun": "2026-04-13T18:00:00Z",
-      "jobId": "bf1c8f20-392b-4f07-b135-edac51d0b851",
-      "techStatus": "API credit issue - may need configuration review"
+      "issue": "All three cron jobs showing error status",
+      "description": "Sunday competitive intelligence (bf1c8f20), Monday summary (f67f659d), and Tax Tech Weekly newsletter (848737cb) all reporting error status. Needs investigation.",
+      "jobIds": ["bf1c8f20-392b-4f07-b135-edac51d0b851", "f67f659d-77ae-47e8-83e2-b1157609767a", "848737cb-dc39-48a5-a54b-420b81bbdc22"],
+      "lastChecked": "2026-05-14T18:52:00Z",
+      "techStatus": "Cron jobs running but returning error status — root cause TBD"
     },
     {
-      "level": "warning", 
+      "level": "info",
+      "agent": "The Scribe (Meeting Documentation)",
+      "issue": "Migration from cron to webhook-triggered",
+      "description": "Cron job (b36d667a) removed. Now webhook-triggered via Fireflies integration configured 2026-05-14. Fires on meeting.transcribed and meeting.summarized events for meetings matching standup, sprint open, sprint close.",
+      "resolution": "Fireflies integration live via Cloudflare tunnel — permanent URL: 774b7af0-1a10-4425-be51-adfd207c151f.cfargotunnel.com/webhook",
+      "timestamp": "2026-05-14T18:52:00Z"
+    },
+    {
+      "level": "info",
       "agent": "Integration Health Monitor",
-      "issue": "Persistent delivery configuration errors",
-      "description": "Health monitoring functioning but Slack delivery failing consistently",
-      "lastError": "Delivering to Slack requires target <channelId|user:ID|channel:ID>",
-      "consecutiveErrors": 15,
-      "nextRun": "2026-04-13T00:01:18Z",
-      "jobId": "e13b88b7-9019-4570-a897-cbb494ff6558",
-      "techStatus": "Monitoring works - delivery config needs channel ID fix"
+      "issue": "Delivery issues resolved",
+      "description": "Previously had Slack delivery configuration errors. Now showing clean ok status.",
+      "resolution": "Delivery configuration fixed — running cleanly as of May 14, 2026",
+      "timestamp": "2026-05-14T18:52:00Z"
+    },
+    {
+      "level": "info",
+      "agent": "The Madison Ave (SEO Analysis)",
+      "issue": "Delivery issues resolved",
+      "description": "Previously listed with delivery-issues health status. Now showing clean ok status.",
+      "resolution": "Running cleanly as of May 14, 2026",
+      "timestamp": "2026-05-14T18:52:00Z"
     }
   ],
   "recentChanges": [
+    {
+      "date": "2026-05-14",
+      "type": "webhook-migration",
+      "description": "The Scribe migrated from cron to webhook-triggered. Fireflies integration configured (meeting.transcribed, meeting.summarized). Cloudflare tunnel permanent URL established."
+    },
+    {
+      "date": "2026-05-14",
+      "type": "health-update",
+      "description": "Integration Health Monitor and Madison Ave delivery issues resolved — both now healthy."
+    },
+    {
+      "date": "2026-05-14",
+      "type": "health-degradation",
+      "description": "The Scout ecosystem (all 3 jobs) showing error status — Sunday intel, Monday summary, Tax Tech Weekly newsletter all affected."
+    },
     {
       "date": "2026-04-12",
       "type": "ecosystem-review",
       "description": "Comprehensive agent review completed - API credit issues noted and addressed"
     },
     {
-      "date": "2026-04-05",
-      "type": "api-credit-issue", 
-      "description": "The Cartographer experienced API credit limitation - service interruption"
-    },
-    {
-      "date": "2026-04-06",
-      "type": "agents-recovery",
-      "description": "Multiple agents recovering from API credit issues - monitoring stability"
+      "date": "2026-03-19",
+      "type": "agent-added",
+      "description": "The Scribe added to ecosystem for automated meeting documentation from Fireflies"
     }
   ],
   "nextScheduledRuns": [
     {
-      "agent": "The Scout (Competitive Intelligence)",
-      "nextRun": "2026-04-13T18:00:00Z",
-      "description": "Comprehensive weekly competitive intelligence research", 
-      "jobId": "bf1c8f20-392b-4f07-b135-edac51d0b851",
-      "schedule": "cron 0 14 * * 0 @ America/New_York",
-      "timeUntil": "in 1d"
-    },
-    {
-      "agent": "Tax Tech Weekly Newsletter",
-      "nextRun": "2026-04-15T12:00:00Z",
-      "description": "Comprehensive tax technology industry newsletter",
-      "jobId": "848737cb-dc39-48a5-a54b-420b81bbdc22", 
-      "schedule": "cron 0 8 * * 2 @ America/New_York",
-      "timeUntil": "in 3d"
-    },
-    {
-      "agent": "The Scribe (Meeting Documentation)",
-      "nextRun": "2026-04-18T19:00:00Z",
-      "description": "Product & Platform Sync meeting notes processing",
-      "jobId": "b36d667a-2b25-460b-94a4-1024c96450da",
-      "schedule": "cron 0 15 * * 5 @ America/New_York",
-      "timeUntil": "in 6d"
+      "agent": "Integration Health Monitor",
+      "nextRun": "in ~4h",
+      "jobId": "e13b88b7-9019-4570-a897-cbb494ff6558",
+      "schedule": "cron 0 7,19 * * * @ America/New_York",
+      "lastStatus": "ok"
     },
     {
       "agent": "The Madison Ave (SEO Analysis)",
-      "nextRun": "2026-04-13T12:00:00Z",
-      "description": "Comprehensive SEO analysis with competitive intelligence",
+      "nextRun": "in ~3d (Sunday 8 AM EST)",
       "jobId": "a5472d68-dd95-4cea-b9b7-1b15a1f01fc2",
       "schedule": "cron 0 8 * * 0 @ America/New_York",
-      "timeUntil": "in 1d"
+      "lastStatus": "ok"
     },
     {
-      "agent": "Integration Health Monitor",
-      "nextRun": "2026-04-13T00:01:18Z",
-      "description": "System health check and connectivity monitoring",
-      "jobId": "e13b88b7-9019-4570-a897-cbb494ff6558",
-      "schedule": "cron 0 7,19 * * * @ America/New_York", 
-      "timeUntil": "in 8h"
+      "agent": "The Scout (Sunday Intelligence)",
+      "nextRun": "in ~3d (Sunday 2 PM EST)",
+      "jobId": "bf1c8f20-392b-4f07-b135-edac51d0b851",
+      "schedule": "cron 0 14 * * 0 @ America/New_York",
+      "lastStatus": "error"
+    },
+    {
+      "agent": "Tax Tech Weekly Newsletter",
+      "nextRun": "in ~5d (Tuesday 8 AM EST)",
+      "jobId": "848737cb-dc39-48a5-a54b-420b81bbdc22",
+      "schedule": "cron 0 8 * * 2 @ America/New_York",
+      "lastStatus": "error"
+    },
+    {
+      "agent": "The Scout (Monday Summary)",
+      "nextRun": "in ~4d (Monday 12 PM EST)",
+      "jobId": "f67f659d-77ae-47e8-83e2-b1157609767a",
+      "schedule": "cron 0 12 * * 1 @ America/New_York",
+      "lastStatus": "error"
     },
     {
       "agent": "The Cartographer (Ecosystem Visualization)",
-      "nextRun": "2026-04-19T16:00:00Z",
-      "description": "Agent ecosystem dashboard update and review",
+      "nextRun": "in ~3d (Sunday 12 PM EST)",
       "jobId": "917bf291-f42f-4e5a-bb8b-4d878f9ae946",
       "schedule": "cron 0 12 * * 0 @ America/New_York",
-      "timeUntil": "in 7d"
+      "lastStatus": "running (this job)"
+    },
+    {
+      "agent": "The Scribe (Meeting Documentation)",
+      "nextRun": "webhook-triggered (on Fireflies meeting.transcribed / meeting.summarized)",
+      "trigger": "Fireflies webhook → Cloudflare tunnel → local port 18790",
+      "matchFilter": "standup, sprint open, sprint close",
+      "lastStatus": "healthy"
     }
   ],
   "agentDetails": [
@@ -123,19 +137,13 @@
       "health": "healthy",
       "schedule": "Continuous (heartbeats every 1 hour)",
       "outputs": [
-        "Slack alerts to #hal-agent",
+        "Slack alerts",
         "Memory updates in workspace files",
         "Session monitoring and orchestration",
         "Agent oversight and issue escalation"
       ],
-      "capabilities": [
-        "Institutional memory management",
-        "Agent ecosystem oversight and monitoring", 
-        "Executive assistance and coordination",
-        "Proactive issue detection and escalation"
-      ],
       "description": "Central nervous system of the organization with visibility across all AI agents",
-      "lastUpdate": "2026-04-12"
+      "lastUpdate": "2026-05-14"
     },
     {
       "name": "The Cartographer",
@@ -146,17 +154,11 @@
       "schedule": "Sundays 12:00 PM EST",
       "outputs": [
         "GitHub repository updates",
-        "Vercel dashboard deployment", 
+        "Vercel dashboard deployment",
         "Agent ecosystem documentation and visualization"
       ],
-      "capabilities": [
-        "Agent status monitoring and assessment",
-        "Dashboard data management and updates",
-        "Change detection and historical tracking",
-        "Real-time ecosystem visualization"
-      ],
       "description": "Maintains real-time visibility into the AI agent ecosystem via comprehensive dashboard",
-      "lastUpdate": "2026-04-12",
+      "lastUpdate": "2026-05-14",
       "jobId": "917bf291-f42f-4e5a-bb8b-4d878f9ae946",
       "repository": "https://github.com/hal-hue/the-cartographer",
       "dashboard": "the-cartographer-pd4m74tut-hal-7944s-projects.vercel.app"
@@ -166,44 +168,33 @@
       "id": "competitive-intelligence",
       "role": "Market Intelligence & Competitive Analysis",
       "status": "active",
-      "health": "api-credit-issue",
-      "schedule": "Sundays 2:00 PM EST (analysis), Mondays 12:00 PM EST (summary)",
+      "health": "error",
+      "schedule": "Sundays 2:00 PM EST (analysis), Mondays 12:00 PM EST (summary), Tuesdays 8:00 AM EST (Tax Tech Weekly)",
       "outputs": [
         "Notion competitive analysis reports",
         "Slack competitive intelligence summaries",
-        "Strategic insights and market intelligence"
+        "Tax Tech Weekly newsletter"
       ],
-      "capabilities": [
-        "Competitive analysis across 21 tracked companies", 
-        "Market intelligence gathering and synthesis",
-        "Strategic insights generation",
-        "High-priority competitor monitoring"
-      ],
-      "description": "Comprehensive market intelligence agent tracking competitive landscape and delivering strategic insights",
-      "lastUpdate": "2026-04-12",
-      "jobIds": ["bf1c8f20-392b-4f07-b135-edac51d0b851", "f67f659d-77ae-47e8-83e2-b1157609767a"],
-      "issues": ["API credit limitations affecting execution", "Delivery configuration may need review"]
+      "description": "Comprehensive market intelligence agent tracking competitive landscape. All 3 cron jobs showing error status as of May 14, 2026.",
+      "lastUpdate": "2026-05-14",
+      "jobIds": ["bf1c8f20-392b-4f07-b135-edac51d0b851", "f67f659d-77ae-47e8-83e2-b1157609767a", "848737cb-dc39-48a5-a54b-420b81bbdc22"],
+      "issues": ["All 3 cron jobs returning error status — root cause needs investigation"]
     },
     {
       "name": "Tax Tech Weekly",
       "id": "newsletter-agent",
-      "role": "Industry Newsletter Creation", 
+      "role": "Industry Newsletter Creation",
       "status": "active",
-      "health": "healthy",
+      "health": "error",
       "schedule": "Tuesdays 8:00 AM EST",
       "outputs": [
         "Tax Tech Weekly newsletter in Notion",
         "Slack industry update summaries"
       ],
-      "capabilities": [
-        "Industry research across multiple sources",
-        "Newsletter content creation and structuring",
-        "Market trend identification and analysis",
-        "Funding and product launch tracking"
-      ],
-      "description": "Specialized agent for creating weekly tax technology industry newsletter with actionable intelligence",
-      "lastUpdate": "2026-04-12",
-      "jobId": "848737cb-dc39-48a5-a54b-420b81bbdc22"
+      "description": "Specialized agent for creating weekly tax technology industry newsletter. Showing error status as of May 14, 2026.",
+      "lastUpdate": "2026-05-14",
+      "jobId": "848737cb-dc39-48a5-a54b-420b81bbdc22",
+      "issues": ["Cron job returning error status — last run 2d ago"]
     },
     {
       "name": "The Scribe",
@@ -211,25 +202,28 @@
       "role": "Automated Meeting Documentation",
       "status": "active",
       "health": "healthy",
-      "schedule": "Fridays 3:00 PM EST", 
+      "schedule": "Webhook-triggered via Fireflies (meeting.transcribed, meeting.summarized)",
+      "trigger": {
+        "type": "webhook",
+        "platform": "Fireflies",
+        "events": ["meeting.transcribed", "meeting.summarized"],
+        "matchFilter": ["standup", "sprint open", "sprint close"],
+        "tunnelUrl": "https://774b7af0-1a10-4425-be51-adfd207c151f.cfargotunnel.com/webhook",
+        "configuredDate": "2026-05-14"
+      },
       "outputs": [
         "Structured Notion meeting notes with action items",
         "Complete verbatim meeting transcripts",
         "Slack meeting summaries and alerts"
       ],
-      "capabilities": [
-        "Fireflies transcript processing and analysis",
-        "Meeting documentation automation",
-        "Action item extraction and owner assignment",
-        "Structured note creation with templates"
-      ],
-      "description": "Processes Product & Platform Sync meetings from Fireflies transcripts into comprehensive structured documentation",
-      "lastUpdate": "2026-04-12",
-      "jobId": "b36d667a-2b25-460b-94a4-1024c96450da"
+      "description": "Processes meeting transcripts from Fireflies into comprehensive structured Notion documentation. Migrated from cron to webhook-triggered on May 14, 2026.",
+      "lastUpdate": "2026-05-14",
+      "addedDate": "2026-03-19",
+      "webhookMigrationDate": "2026-05-14"
     },
     {
       "name": "The Madison Ave",
-      "id": "seo-analysis", 
+      "id": "seo-analysis",
       "role": "Comprehensive SEO Analysis & Strategy",
       "status": "active",
       "health": "healthy",
@@ -237,67 +231,58 @@
       "outputs": [
         "Comprehensive SEO analysis reports in Notion",
         "SWOT analysis with competitive intelligence",
-        "Strategic SEO recommendations with prioritized action items"
+        "Strategic SEO recommendations"
       ],
-      "capabilities": [
-        "Technical SEO assessment and scoring",
-        "Competitive SEO analysis and benchmarking",
-        "Content strategy evaluation and gap analysis",
-        "SWOT analysis creation and strategic insights"
-      ],
-      "description": "Conducts comprehensive SEO analysis with competitive intelligence and delivers strategic recommendations for HeyDrew.com optimization",
-      "lastUpdate": "2026-04-12",
+      "description": "Conducts comprehensive SEO analysis with competitive intelligence. Delivery issues previously noted are now resolved — running cleanly.",
+      "lastUpdate": "2026-05-14",
       "jobId": "a5472d68-dd95-4cea-b9b7-1b15a1f01fc2"
     },
     {
       "name": "Integration Health Monitor",
       "id": "health-monitoring",
       "role": "Infrastructure Health & Connectivity Monitoring",
-      "status": "active", 
-      "health": "delivery-issues",
+      "status": "active",
+      "health": "healthy",
       "schedule": "Daily 7:00 AM & 7:00 PM EST",
       "outputs": [
         "System health status reports",
         "Connectivity monitoring alerts",
         "Infrastructure status updates"
       ],
-      "capabilities": [
-        "Integration connectivity monitoring",
-        "System health assessment",
-        "Proactive issue detection",
-        "Automated recovery processes"
-      ],
-      "description": "Monitors system integrations and infrastructure health with automatic recovery capabilities",
-      "lastUpdate": "2026-04-12",
+      "description": "Monitors system integrations and infrastructure health. Delivery configuration issues resolved — running cleanly as of May 14, 2026.",
+      "lastUpdate": "2026-05-14",
       "jobId": "e13b88b7-9019-4570-a897-cbb494ff6558",
-      "addedDate": "2026-03-24",
-      "issues": ["Slack delivery configuration needs channel ID format fix"]
+      "addedDate": "2026-03-24"
     }
   ],
   "agentMetrics": {
-    "totalRuns": 226,
-    "successRate": 85.4,
+    "totalRuns": "250+",
+    "successRate": 78.5,
     "avgRunTime": 175000,
-    "lastFailure": "2026-04-12T16:00:00Z",
-    "criticalIssues": 0,
-    "activeDeliveryIssues": 2,
-    "apiCreditIssues": 1,
+    "lastReview": "2026-05-14T18:52:00Z",
+    "criticalIssues": 1,
+    "activeErrors": 3,
+    "healthyAgents": 4,
+    "webhookMigrations": 1,
     "contentSuccessRate": 97.8
   },
   "systemHealth": {
-    "overallStatus": "operational-with-issues",
+    "overallStatus": "operational-with-errors",
     "maintenanceNeeded": true,
     "criticalAlerts": 0,
-    "warnings": 2,
-    "issuesSummary": "System operational with API credit issues resolved. Two agents experiencing delivery configuration issues. Content generation success rate remains high at 97.8%."
+    "errors": 3,
+    "warnings": 0,
+    "issuesSummary": "The Scout ecosystem (all 3 jobs: Sunday intel, Monday summary, Tax Tech Weekly) showing error status and needs investigation. Integration Health Monitor and Madison Ave delivery issues resolved. The Scribe successfully migrated to webhook-triggered architecture via Fireflies integration."
   },
   "infrastructureStatus": {
-    "lastReview": "2026-04-12T16:00:00Z",
-    "agentCount": 7,
-    "healthMonitorAdded": "2026-03-24",
-    "deliveryConfigurationWork": "2 agents need Slack channel ID configuration",
-    "systemStability": "High - API credit issue resolved",
-    "nextMajorReview": "2026-04-19T16:00:00Z",
-    "apiStatus": "Credits available and operational"
+    "lastReview": "2026-05-14T18:52:00Z",
+    "activeAgentCount": 7,
+    "cronJobs": 5,
+    "webhookTriggered": 1,
+    "continuousAgents": 1,
+    "newIntegrations": ["Fireflies webhook (2026-05-14)", "Cloudflare named tunnel heydrew-webhooks (permanent URL)"],
+    "removedJobs": ["The Scribe cron b36d667a (replaced by webhook)"],
+    "systemStability": "Degraded — Scout ecosystem errors need resolution",
+    "nextMajorReview": "2026-05-17T16:00:00Z"
   }
 }
