@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-05-14T21:15:00Z",
+  "lastUpdate": "2026-05-14T21:31:00Z",
   "totalAgents": 16,
   "statusCounts": {
     "active": 7,
@@ -17,14 +17,14 @@
     {
       "id": "hal",
       "name": "Hal",
-      "role": "Executive Assistant & Agent Overseer",
+      "role": "Executive Assistant — Agent Ecosystem Lead",
       "status": "active",
       "health": "healthy",
-      "capabilities": ["Transcription", "Decision Capture", "Memory Management", "Agent Oversight", "Heartbeat Monitoring", "Security Review Oversight", "Cron Job Management"],
-      "outputs": ["MEMORY.md", "Daily transcripts", "Meeting summaries", "Agent status alerts", "Security escalations"],
+      "capabilities": ["Agent Ecosystem Oversight", "Sub-Agent Monitoring", "Failure Triage & Escalation", "Institutional Memory", "Heartbeat Monitoring", "Cron Management"],
+      "outputs": ["MEMORY.md", "Daily transcripts", "Meeting summaries", "Agent status alerts", "Escalation reports to #hal-agent"],
       "lastUpdate": "2026-05-14",
-      "description": "Institutional memory and central nervous system. Joins calls, captures decisions, surfaces insights, and monitors all AI agents. Oversees The Bounty Hunter security scan pipeline — triages findings and escalates critical vulnerabilities to #hal-agent.",
-      "workspaces": ["Main Session", "Memory Files", "Heartbeat Monitoring", "Agent Ecosystem", "Security Reports"],
+      "description": "Sits above the entire agent ecosystem as the central nervous system and institutional memory. Every agent — The Scout, The Scribe, The Bounty Hunter, The Cartographer, The Madison Ave, and all future agents — reports upward through Hal. Monitors agent health via heartbeats and cron checks, triages failures, escalates issues to #hal-agent, and maintains the organizational memory that ties everything together.",
+      "workspaces": ["Main Session", "Memory Files", "Heartbeat Monitoring", "Agent Ecosystem", "Slack #hal-agent"],
       "schedule": "Continuous (heartbeats every 30 minutes)"
     },
     {
