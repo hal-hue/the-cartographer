@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-05-14T20:09:00Z",
+  "lastUpdate": "2026-05-14T21:15:00Z",
   "totalAgents": 16,
   "statusCounts": {
     "active": 7,
@@ -17,14 +17,14 @@
     {
       "id": "hal",
       "name": "Hal",
-      "role": "Executive Assistant",
+      "role": "Executive Assistant & Agent Overseer",
       "status": "active",
       "health": "healthy",
-      "capabilities": ["Transcription", "Decision Capture", "Memory Management", "Agent Oversight", "Heartbeat Monitoring"],
-      "outputs": ["MEMORY.md", "Daily transcripts", "Meeting summaries", "Agent status alerts"],
+      "capabilities": ["Transcription", "Decision Capture", "Memory Management", "Agent Oversight", "Heartbeat Monitoring", "Security Review Oversight", "Cron Job Management"],
+      "outputs": ["MEMORY.md", "Daily transcripts", "Meeting summaries", "Agent status alerts", "Security escalations"],
       "lastUpdate": "2026-05-14",
-      "description": "Institutional memory and central nervous system. Joins calls, captures decisions, surfaces insights, and provides oversight of all AI agents.",
-      "workspaces": ["Main Session", "Memory Files", "Heartbeat Monitoring", "Agent Ecosystem"],
+      "description": "Institutional memory and central nervous system. Joins calls, captures decisions, surfaces insights, and monitors all AI agents. Oversees The Bounty Hunter security scan pipeline — triages findings and escalates critical vulnerabilities to #hal-agent.",
+      "workspaces": ["Main Session", "Memory Files", "Heartbeat Monitoring", "Agent Ecosystem", "Security Reports"],
       "schedule": "Continuous (heartbeats every 30 minutes)"
     },
     {
