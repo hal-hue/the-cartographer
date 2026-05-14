@@ -1,14 +1,14 @@
 {
-  "lastUpdate": "2026-05-14T19:20:00Z",
-  "totalAgents": 15,
+  "lastUpdate": "2026-05-14T20:09:00Z",
+  "totalAgents": 16,
   "statusCounts": {
-    "active": 6,
+    "active": 7,
     "building": 0,
     "planned": 9,
     "deprecated": 0
   },
   "healthCounts": {
-    "healthy": 5,
+    "healthy": 6,
     "warning": 1,
     "error": 0,
     "planned": 9
@@ -91,6 +91,19 @@
       "description": "Silently monitors system integrations and infrastructure health. Auto-recovers minor issues. Only alerts when problems are detected.",
       "workspaces": ["System Integrations", "Health Dashboards", "Alert Systems"],
       "schedule": "Daily 7:00 AM & 7:00 PM EST"
+    },
+    {
+      "id": "the-bounty-hunter",
+      "name": "The Bounty Hunter",
+      "role": "Security Review Specialist",
+      "status": "active",
+      "health": "healthy",
+      "capabilities": ["Static Analysis (ESLint)", "Dependency Vulnerability Scanning (npm audit)", "Pattern-Based Security (Semgrep)", "AI-Powered Risk Review", "HTML Dashboard Generation", "GitHub Org Scanning"],
+      "outputs": ["Slack Security Alerts (#hal-agent)", "Notion Security Report Pages", "HTML Dashboard Reports", "run.log History"],
+      "lastUpdate": "2026-05-14",
+      "description": "Scans JS/TS codebases for security vulnerabilities using ESLint, npm audit, and Semgrep. Reviews findings with Claude AI for risk explanation and fix suggestions. Reports to Slack and creates Notion pages with full findings.",
+      "workspaces": ["OpenClaw Workspace", "~/the-cartographer (local)", "github.com/hal-hue (all repos)", "Notion Security Reports", "Slack #hal-agent"],
+      "schedule": "Monday, Wednesday, Friday at 7:00 AM EST"
     },
     {
       "id": "the-publisher",
