@@ -1,288 +1,217 @@
 {
-  "lastUpdate": "2026-05-14T18:52:00Z",
-  "totalAgents": 7,
+  "lastUpdate": "2026-05-14T19:20:00Z",
+  "totalAgents": 15,
   "statusCounts": {
-    "active": 7,
+    "active": 6,
     "building": 0,
-    "planned": 4,
+    "planned": 9,
     "deprecated": 0
   },
   "healthCounts": {
-    "healthy": 4,
-    "error": 3,
-    "delivery-issues": 0,
-    "api-credit-issue": 0,
-    "warning": 0,
-    "unknown": 0
+    "healthy": 5,
+    "warning": 1,
+    "error": 0,
+    "planned": 9
   },
-  "alerts": [
+  "agents": [
     {
-      "level": "error",
-      "agent": "The Scout (Competitive Intelligence)",
-      "issue": "All three cron jobs showing error status",
-      "description": "Sunday competitive intelligence (bf1c8f20), Monday summary (f67f659d), and Tax Tech Weekly newsletter (848737cb) all reporting error status. Needs investigation.",
-      "jobIds": ["bf1c8f20-392b-4f07-b135-edac51d0b851", "f67f659d-77ae-47e8-83e2-b1157609767a", "848737cb-dc39-48a5-a54b-420b81bbdc22"],
-      "lastChecked": "2026-05-14T18:52:00Z",
-      "techStatus": "Cron jobs running but returning error status — root cause TBD"
-    },
-    {
-      "level": "info",
-      "agent": "The Scribe (Meeting Documentation)",
-      "issue": "Migration from cron to webhook-triggered",
-      "description": "Cron job (b36d667a) removed. Now webhook-triggered via Fireflies integration configured 2026-05-14. Fires on meeting.transcribed and meeting.summarized events for meetings matching standup, sprint open, sprint close.",
-      "resolution": "Fireflies integration live via Cloudflare tunnel — permanent URL: 774b7af0-1a10-4425-be51-adfd207c151f.cfargotunnel.com/webhook",
-      "timestamp": "2026-05-14T18:52:00Z"
-    },
-    {
-      "level": "info",
-      "agent": "Integration Health Monitor",
-      "issue": "Delivery issues resolved",
-      "description": "Previously had Slack delivery configuration errors. Now showing clean ok status.",
-      "resolution": "Delivery configuration fixed — running cleanly as of May 14, 2026",
-      "timestamp": "2026-05-14T18:52:00Z"
-    },
-    {
-      "level": "info",
-      "agent": "The Madison Ave (SEO Analysis)",
-      "issue": "Delivery issues resolved",
-      "description": "Previously listed with delivery-issues health status. Now showing clean ok status.",
-      "resolution": "Running cleanly as of May 14, 2026",
-      "timestamp": "2026-05-14T18:52:00Z"
-    }
-  ],
-  "recentChanges": [
-    {
-      "date": "2026-05-14",
-      "type": "webhook-migration",
-      "description": "The Scribe migrated from cron to webhook-triggered. Fireflies integration configured (meeting.transcribed, meeting.summarized). Cloudflare tunnel permanent URL established."
-    },
-    {
-      "date": "2026-05-14",
-      "type": "health-update",
-      "description": "Integration Health Monitor and Madison Ave delivery issues resolved — both now healthy."
-    },
-    {
-      "date": "2026-05-14",
-      "type": "health-degradation",
-      "description": "The Scout ecosystem (all 3 jobs) showing error status — Sunday intel, Monday summary, Tax Tech Weekly newsletter all affected."
-    },
-    {
-      "date": "2026-04-12",
-      "type": "ecosystem-review",
-      "description": "Comprehensive agent review completed - API credit issues noted and addressed"
-    },
-    {
-      "date": "2026-03-19",
-      "type": "agent-added",
-      "description": "The Scribe added to ecosystem for automated meeting documentation from Fireflies"
-    }
-  ],
-  "nextScheduledRuns": [
-    {
-      "agent": "Integration Health Monitor",
-      "nextRun": "in ~4h",
-      "jobId": "e13b88b7-9019-4570-a897-cbb494ff6558",
-      "schedule": "cron 0 7,19 * * * @ America/New_York",
-      "lastStatus": "ok"
-    },
-    {
-      "agent": "The Madison Ave (SEO Analysis)",
-      "nextRun": "in ~3d (Sunday 8 AM EST)",
-      "jobId": "a5472d68-dd95-4cea-b9b7-1b15a1f01fc2",
-      "schedule": "cron 0 8 * * 0 @ America/New_York",
-      "lastStatus": "ok"
-    },
-    {
-      "agent": "The Scout (Sunday Intelligence)",
-      "nextRun": "in ~3d (Sunday 2 PM EST)",
-      "jobId": "bf1c8f20-392b-4f07-b135-edac51d0b851",
-      "schedule": "cron 0 14 * * 0 @ America/New_York",
-      "lastStatus": "error"
-    },
-    {
-      "agent": "Tax Tech Weekly Newsletter",
-      "nextRun": "in ~5d (Tuesday 8 AM EST)",
-      "jobId": "848737cb-dc39-48a5-a54b-420b81bbdc22",
-      "schedule": "cron 0 8 * * 2 @ America/New_York",
-      "lastStatus": "error"
-    },
-    {
-      "agent": "The Scout (Monday Summary)",
-      "nextRun": "in ~4d (Monday 12 PM EST)",
-      "jobId": "f67f659d-77ae-47e8-83e2-b1157609767a",
-      "schedule": "cron 0 12 * * 1 @ America/New_York",
-      "lastStatus": "error"
-    },
-    {
-      "agent": "The Cartographer (Ecosystem Visualization)",
-      "nextRun": "in ~3d (Sunday 12 PM EST)",
-      "jobId": "917bf291-f42f-4e5a-bb8b-4d878f9ae946",
-      "schedule": "cron 0 12 * * 0 @ America/New_York",
-      "lastStatus": "running (this job)"
-    },
-    {
-      "agent": "The Scribe (Meeting Documentation)",
-      "nextRun": "webhook-triggered (on Fireflies meeting.transcribed / meeting.summarized)",
-      "trigger": "Fireflies webhook → Cloudflare tunnel → local port 18790",
-      "matchFilter": "standup, sprint open, sprint close",
-      "lastStatus": "healthy"
-    }
-  ],
-  "agentDetails": [
-    {
+      "id": "hal",
       "name": "Hal",
-      "id": "executive-assistant",
-      "role": "Executive Assistant & Institutional Memory",
+      "role": "Executive Assistant",
       "status": "active",
       "health": "healthy",
-      "schedule": "Continuous (heartbeats every 1 hour)",
-      "outputs": [
-        "Slack alerts",
-        "Memory updates in workspace files",
-        "Session monitoring and orchestration",
-        "Agent oversight and issue escalation"
-      ],
-      "description": "Central nervous system of the organization with visibility across all AI agents",
-      "lastUpdate": "2026-05-14"
+      "capabilities": ["Transcription", "Decision Capture", "Memory Management", "Agent Oversight", "Heartbeat Monitoring"],
+      "outputs": ["MEMORY.md", "Daily transcripts", "Meeting summaries", "Agent status alerts"],
+      "lastUpdate": "2026-05-14",
+      "description": "Institutional memory and central nervous system. Joins calls, captures decisions, surfaces insights, and provides oversight of all AI agents.",
+      "workspaces": ["Main Session", "Memory Files", "Heartbeat Monitoring", "Agent Ecosystem"],
+      "schedule": "Continuous (heartbeats every 30 minutes)"
     },
     {
+      "id": "cartographer",
       "name": "The Cartographer",
-      "id": "ecosystem-visualization",
-      "role": "Agent Ecosystem Documentation & Dashboard",
+      "role": "Ecosystem Visualization",
       "status": "active",
       "health": "healthy",
-      "schedule": "Sundays 12:00 PM EST",
-      "outputs": [
-        "GitHub repository updates",
-        "Vercel dashboard deployment",
-        "Agent ecosystem documentation and visualization"
-      ],
-      "description": "Maintains real-time visibility into the AI agent ecosystem via comprehensive dashboard",
+      "capabilities": ["Agent Visualization", "Workflow Mapping", "Dashboard Management", "Change Detection"],
+      "outputs": ["Interactive Dashboard", "Agent Registry", "GitHub Repository Updates", "Vercel Deployments"],
       "lastUpdate": "2026-05-14",
-      "jobId": "917bf291-f42f-4e5a-bb8b-4d878f9ae946",
-      "repository": "https://github.com/hal-hue/the-cartographer",
-      "dashboard": "the-cartographer-pd4m74tut-hal-7944s-projects.vercel.app"
+      "description": "Maintains real-time visibility into the AI agent ecosystem via dashboard. Maps all agents and workflows for organizational transparency.",
+      "workspaces": ["Web Dashboard", "GitHub Repository", "Vercel Platform"],
+      "schedule": "Sundays 12:00 PM EST"
     },
     {
+      "id": "the-scout",
       "name": "The Scout",
-      "id": "competitive-intelligence",
-      "role": "Market Intelligence & Competitive Analysis",
+      "role": "Competitive Intelligence Specialist",
       "status": "active",
-      "health": "error",
-      "schedule": "Sundays 2:00 PM EST (analysis), Mondays 12:00 PM EST (summary), Tuesdays 8:00 AM EST (Tax Tech Weekly)",
-      "outputs": [
-        "Notion competitive analysis reports",
-        "Slack competitive intelligence summaries",
-        "Tax Tech Weekly newsletter"
-      ],
-      "description": "Comprehensive market intelligence agent tracking competitive landscape. All 3 cron jobs showing error status as of May 14, 2026.",
+      "health": "warning",
+      "capabilities": ["Web Research", "Competitive Analysis", "Industry Monitoring", "Newsletter Creation", "Strategic Intelligence"],
+      "outputs": ["Weekly Competitive Reports", "Tax Tech Weekly Newsletter", "Notion Intelligence Archives", "Slack Summaries"],
       "lastUpdate": "2026-05-14",
-      "jobIds": ["bf1c8f20-392b-4f07-b135-edac51d0b851", "f67f659d-77ae-47e8-83e2-b1157609767a", "848737cb-dc39-48a5-a54b-420b81bbdc22"],
-      "issues": ["All 3 cron jobs returning error status — root cause needs investigation"]
+      "description": "Monitors 21+ competitors and industry trends. Delivers Tax Tech Weekly newsletter (Tuesdays) and competitive intelligence reports (Sundays). Delivery configs fixed May 14, 2026 — next run Sunday will confirm resolution.",
+      "workspaces": ["Notion Databases", "Slack Channels", "Web Research", "Industry Sources"],
+      "schedule": "Tuesdays 8:00 AM EST (Newsletter) · Sundays 2:00 PM EST (Intelligence) · Mondays 12:00 PM EST (Summary)"
     },
     {
-      "name": "Tax Tech Weekly",
-      "id": "newsletter-agent",
-      "role": "Industry Newsletter Creation",
-      "status": "active",
-      "health": "error",
-      "schedule": "Tuesdays 8:00 AM EST",
-      "outputs": [
-        "Tax Tech Weekly newsletter in Notion",
-        "Slack industry update summaries"
-      ],
-      "description": "Specialized agent for creating weekly tax technology industry newsletter. Showing error status as of May 14, 2026.",
-      "lastUpdate": "2026-05-14",
-      "jobId": "848737cb-dc39-48a5-a54b-420b81bbdc22",
-      "issues": ["Cron job returning error status — last run 2d ago"]
-    },
-    {
+      "id": "the-scribe",
       "name": "The Scribe",
-      "id": "meeting-documentation",
-      "role": "Automated Meeting Documentation",
+      "role": "Meeting Documentation Specialist",
       "status": "active",
       "health": "healthy",
-      "schedule": "Webhook-triggered via Fireflies (meeting.transcribed, meeting.summarized)",
-      "trigger": {
-        "type": "webhook",
-        "platform": "Fireflies",
-        "events": ["meeting.transcribed", "meeting.summarized"],
-        "matchFilter": ["standup", "sprint open", "sprint close"],
-        "tunnelUrl": "https://774b7af0-1a10-4425-be51-adfd207c151f.cfargotunnel.com/webhook",
-        "configuredDate": "2026-05-14"
-      },
-      "outputs": [
-        "Structured Notion meeting notes with action items",
-        "Complete verbatim meeting transcripts",
-        "Slack meeting summaries and alerts"
-      ],
-      "description": "Processes meeting transcripts from Fireflies into comprehensive structured Notion documentation. Migrated from cron to webhook-triggered on May 14, 2026.",
+      "capabilities": ["Meeting Transcription", "Structured Note-Taking", "Action Item Extraction", "Fireflies Integration"],
+      "outputs": ["Structured Notion Meeting Notes", "Action Item Tracking", "Meeting Summaries"],
       "lastUpdate": "2026-05-14",
-      "addedDate": "2026-03-19",
-      "webhookMigrationDate": "2026-05-14"
+      "description": "Processes meeting transcripts from Fireflies into structured Notion documentation. Webhook-triggered — fires on meeting.transcribed events for standup, sprint open, and sprint close meetings via Cloudflare tunnel.",
+      "workspaces": ["Fireflies Webhooks", "Notion Meeting Database", "Cloudflare Tunnel", "Webhook Receiver (port 18790)"],
+      "schedule": "Webhook-triggered (Fireflies: meeting.transcribed)"
     },
     {
+      "id": "the-madison-ave",
       "name": "The Madison Ave",
-      "id": "seo-analysis",
-      "role": "Comprehensive SEO Analysis & Strategy",
+      "role": "SEO Analysis Specialist",
       "status": "active",
       "health": "healthy",
-      "schedule": "Sundays 8:00 AM EST",
-      "outputs": [
-        "Comprehensive SEO analysis reports in Notion",
-        "SWOT analysis with competitive intelligence",
-        "Strategic SEO recommendations"
-      ],
-      "description": "Conducts comprehensive SEO analysis with competitive intelligence. Delivery issues previously noted are now resolved — running cleanly.",
+      "capabilities": ["Technical SEO Analysis", "Competitive Intelligence", "Content Strategy Assessment", "SWOT Analysis", "Website Crawling"],
+      "outputs": ["Comprehensive SEO Reports", "Competitive Analysis", "Notion Strategy Documents", "Technical Recommendations"],
       "lastUpdate": "2026-05-14",
-      "jobId": "a5472d68-dd95-4cea-b9b7-1b15a1f01fc2"
+      "description": "Conducts in-depth SEO analysis of HeyDrew.com with competitive intelligence and strategic recommendations. Performs technical SEO audits and strategic positioning analysis.",
+      "workspaces": ["Notion SEO Database", "Web Research", "Technical Analysis", "Competitive Intelligence"],
+      "schedule": "Sundays 8:00 AM EST (bi-weekly)"
     },
     {
+      "id": "integration-health-monitor",
       "name": "Integration Health Monitor",
-      "id": "health-monitoring",
       "role": "Infrastructure Health & Connectivity Monitoring",
       "status": "active",
       "health": "healthy",
-      "schedule": "Daily 7:00 AM & 7:00 PM EST",
-      "outputs": [
-        "System health status reports",
-        "Connectivity monitoring alerts",
-        "Infrastructure status updates"
-      ],
-      "description": "Monitors system integrations and infrastructure health. Delivery configuration issues resolved — running cleanly as of May 14, 2026.",
+      "capabilities": ["Integration Monitoring", "System Health Assessment", "Connectivity Testing", "Auto-Recovery"],
+      "outputs": ["Alerts only on issues (silent otherwise)"],
       "lastUpdate": "2026-05-14",
-      "jobId": "e13b88b7-9019-4570-a897-cbb494ff6558",
-      "addedDate": "2026-03-24"
+      "description": "Silently monitors system integrations and infrastructure health. Auto-recovers minor issues. Only alerts when problems are detected.",
+      "workspaces": ["System Integrations", "Health Dashboards", "Alert Systems"],
+      "schedule": "Daily 7:00 AM & 7:00 PM EST"
+    },
+    {
+      "id": "the-publisher",
+      "name": "The Publisher",
+      "role": "Client Newsletter",
+      "status": "planned",
+      "capabilities": ["Content Curation", "Newsletter Drafting", "Product Update Summarization", "Industry News Aggregation"],
+      "outputs": ["Monthly Email Newsletter Draft"],
+      "lastUpdate": "2026-05-14",
+      "description": "Creates monthly newsletters for existing clients and prospects. Pulls content from product changes, blog posts, and industry news. Drafts for human review before send.",
+      "workspaces": ["Email Platform (TBD)", "Notion", "Blog CMS"],
+      "schedule": "Monthly",
+      "blocker": "Email platform TBD (Mailchimp/HubSpot/Klaviyo)"
+    },
+    {
+      "id": "the-prospector",
+      "name": "The Prospector",
+      "role": "Keyword Identifier",
+      "status": "planned",
+      "capabilities": ["Keyword Research", "Search Trend Analysis", "Competitor Keyword Gap Analysis", "Opportunity Identification"],
+      "outputs": ["Keyword Opportunities Report in Notion"],
+      "lastUpdate": "2026-05-14",
+      "description": "Discovers new keywords HeyDrew should target for organic growth. Analyzes HeyDrew and competitor sites to surface high-value keyword opportunities.",
+      "workspaces": ["Notion", "Web Research"],
+      "schedule": "Every 2 weeks"
+    },
+    {
+      "id": "the-analyst",
+      "name": "The Analyst",
+      "role": "Competitor Services Comparison",
+      "status": "planned",
+      "capabilities": ["Competitor Analysis", "Feature Comparison", "Pricing Analysis", "Positioning Assessment"],
+      "outputs": ["Notion Comparison Report", "Slack Summary"],
+      "lastUpdate": "2026-05-14",
+      "description": "Produces side-by-side comparisons of competitor offerings vs. HeyDrew. Focuses on top-tier competitors: Instead, Lettuce, and Collective.",
+      "workspaces": ["Notion", "Slack (#all-heydrew)", "Web Research"],
+      "schedule": "Monthly"
+    },
+    {
+      "id": "the-doorman",
+      "name": "The Doorman",
+      "role": "Google Business Marketing",
+      "status": "planned",
+      "capabilities": ["Google Business Profile Management", "Post Drafting", "Review Response Drafting"],
+      "outputs": ["Draft Posts and Review Responses for Approval"],
+      "lastUpdate": "2026-05-14",
+      "description": "Manages HeyDrew's Google Business Profile — drafts posts and review responses for human approval before publishing.",
+      "workspaces": ["Google Business Profile", "Notion (drafts)"],
+      "schedule": "Weekly"
+    },
+    {
+      "id": "the-strategist",
+      "name": "The Strategist",
+      "role": "Content Strategy",
+      "status": "planned",
+      "capabilities": ["Content Calendar Planning", "Blog Topic Generation (20/run)", "SEO-Informed Strategy", "Keyword Integration"],
+      "outputs": ["Monthly Content Calendar in Notion"],
+      "lastUpdate": "2026-05-14",
+      "description": "Monthly content planning agent. Generates 20 blog topic ideas and builds a full content calendar informed by SEO Opportunities and Keyword Identifier reports. Calendar requires human approval before triggering The Typist.",
+      "workspaces": ["Notion Content Calendar"],
+      "schedule": "Monthly"
+    },
+    {
+      "id": "the-typist",
+      "name": "The Typist",
+      "role": "Content Creation",
+      "status": "planned",
+      "capabilities": ["Long-form Content Writing", "Feature Announcement Drafting", "Brand Voice Consistency"],
+      "outputs": ["Content Drafts in CMS for Review"],
+      "lastUpdate": "2026-05-14",
+      "description": "Creates content from approved Content Strategy calendar items. Also covers new feature announcement blog posts triggered manually. All output drafted for human review before publish.",
+      "workspaces": ["CMS (TBD)", "Notion"],
+      "schedule": "Triggered by approved Content Strategy calendar",
+      "blocker": "CMS platform TBD (WordPress/Webflow/Contentful)"
+    },
+    {
+      "id": "the-reporter",
+      "name": "The Reporter",
+      "role": "Breaking News Blog Content",
+      "status": "planned",
+      "capabilities": ["News Detection", "Rapid Content Drafting", "Industry Trend Response", "Same-Day Turnaround"],
+      "outputs": ["Same-Day Blog Draft in CMS", "Slack Notification"],
+      "lastUpdate": "2026-05-14",
+      "description": "Rapid-response blog drafts on breaking industry news. Triggered by web search detection or human flag. Same-day turnaround with human review before publish.",
+      "workspaces": ["CMS (TBD)", "Slack", "Web Research"],
+      "schedule": "Triggered by news detection or manual flag",
+      "blocker": "CMS platform TBD"
+    },
+    {
+      "id": "the-surveyor",
+      "name": "The Surveyor",
+      "role": "SEO Opportunities",
+      "status": "planned",
+      "capabilities": ["Technical SEO Audit", "Backlink Analysis", "Content Gap Analysis", "Internal Linking Review"],
+      "outputs": ["Monthly SEO Opportunities Report in Notion"],
+      "lastUpdate": "2026-05-14",
+      "description": "Broad monthly SEO audit covering technical issues, backlinks, content gaps, and internal linking. Feeds into The Strategist and The Prospector planning cycles.",
+      "workspaces": ["Notion", "Web Research"],
+      "schedule": "Monthly (alongside Content Strategy)"
+    },
+    {
+      "id": "the-clerk",
+      "name": "The Clerk",
+      "role": "Jira Task Creation from Meetings",
+      "status": "planned",
+      "capabilities": ["Meeting Transcript Analysis", "Action Item Extraction", "Jira Task Creation", "Meeting Note Structuring"],
+      "outputs": ["Jira Tasks", "Structured Notion Meeting Notes"],
+      "lastUpdate": "2026-05-14",
+      "description": "Structures team calls and creates Jira tasks from Fireflies transcripts. Triggered by Fireflies webhook on Sprint Planning and Standup meetings.",
+      "workspaces": ["Fireflies Webhooks", "Jira (TBD)", "Notion"],
+      "schedule": "Triggered by Fireflies webhook (Sprint Planning, Standup)",
+      "blocker": "Jira project/board TBD"
     }
   ],
-  "agentMetrics": {
-    "totalRuns": "250+",
-    "successRate": 78.5,
-    "avgRunTime": 175000,
-    "lastReview": "2026-05-14T18:52:00Z",
-    "criticalIssues": 1,
-    "activeErrors": 3,
-    "healthyAgents": 4,
-    "webhookMigrations": 1,
-    "contentSuccessRate": 97.8
-  },
-  "systemHealth": {
-    "overallStatus": "operational-with-errors",
-    "maintenanceNeeded": true,
-    "criticalAlerts": 0,
-    "errors": 3,
-    "warnings": 0,
-    "issuesSummary": "The Scout ecosystem (all 3 jobs: Sunday intel, Monday summary, Tax Tech Weekly) showing error status and needs investigation. Integration Health Monitor and Madison Ave delivery issues resolved. The Scribe successfully migrated to webhook-triggered architecture via Fireflies integration."
-  },
-  "infrastructureStatus": {
-    "lastReview": "2026-05-14T18:52:00Z",
-    "activeAgentCount": 7,
-    "cronJobs": 5,
-    "webhookTriggered": 1,
-    "continuousAgents": 1,
-    "newIntegrations": ["Fireflies webhook (2026-05-14)", "Cloudflare named tunnel heydrew-webhooks (permanent URL)"],
-    "removedJobs": ["The Scribe cron b36d667a (replaced by webhook)"],
-    "systemStability": "Degraded — Scout ecosystem errors need resolution",
-    "nextMajorReview": "2026-05-17T16:00:00Z"
-  }
+  "alerts": [
+    {
+      "level": "warning",
+      "agent": "The Scout",
+      "issue": "Delivery config fixed — pending confirmation",
+      "description": "Slack delivery configs updated May 14, 2026. Next scheduled run Sunday 2:00 PM EST will confirm resolution.",
+      "lastChecked": "2026-05-14T19:20:00Z"
+    }
+  ]
 }
