@@ -1,4 +1,7 @@
-import { Calendar, CheckCircle, Clock, Wrench, AlertTriangle, XCircle, AlertCircle } from 'lucide-react'
+'use client'
+
+import { useState } from 'react'
+import { Calendar, CheckCircle, Clock, Wrench, AlertTriangle, XCircle, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
 
 interface Agent {
   id: string
@@ -70,6 +73,8 @@ const healthConfig = {
 }
 
 export function AgentCard({ agent }: AgentCardProps) {
+  const [expanded, setExpanded] = useState(false)
+
   const sConfig = statusConfig[agent.status as keyof typeof statusConfig] || statusConfig.planned
   const StatusIcon = sConfig.icon
   const isPlanned = agent.status === 'planned'
@@ -104,8 +109,29 @@ export function AgentCard({ agent }: AgentCardProps) {
       {/* Role */}
       <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">{agent.role}</p>
 
-      {/* Description */}
-      <p className="text-sm text-gray-600 mb-3 line-clamp-2">{agent.description}</p>
+      {/* Description + expand toggle */}
+      <div className="mb-3">
+        <p className={`text-sm text-gray-600 ${expanded ? '' : 'line-clamp-2'}`}>
+          {agent.description}
+        </p>
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="mt-1 flex items-center gap-0.5 text-xs text-gray-400 hover:text-gray-600 transition-colors"
+          aria-label={expanded ? 'Collapse description' : 'Expand description'}
+        >
+          {expanded ? (
+            <>
+              <ChevronUp className="w-3.5 h-3.5" />
+              <span>Show less</span>
+            </>
+          ) : (
+            <>
+              <ChevronDown className="w-3.5 h-3.5" />
+              <span>Show more</span>
+            </>
+          )}
+        </button>
+      </div>
 
       {/* Schedule */}
       {agent.schedule && (
