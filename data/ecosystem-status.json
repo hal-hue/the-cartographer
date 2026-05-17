@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-05-14T21:31:00Z",
+  "lastUpdate": "2026-05-17T16:00:00Z",
   "totalAgents": 16,
   "statusCounts": {
     "active": 7,
@@ -8,9 +8,9 @@
     "deprecated": 0
   },
   "healthCounts": {
-    "healthy": 6,
+    "healthy": 3,
     "warning": 1,
-    "error": 0,
+    "error": 3,
     "planned": 9
   },
   "agents": [
@@ -22,7 +22,7 @@
       "health": "healthy",
       "capabilities": ["Agent Ecosystem Oversight", "Sub-Agent Monitoring", "Failure Triage & Escalation", "Institutional Memory", "Heartbeat Monitoring", "Cron Management"],
       "outputs": ["MEMORY.md", "Daily transcripts", "Meeting summaries", "Agent status alerts", "Escalation reports to #hal-agent"],
-      "lastUpdate": "2026-05-14",
+      "lastUpdate": "2026-05-17",
       "description": "Sits above the entire agent ecosystem as the central nervous system and institutional memory. Every agent — The Scout, The Scribe, The Bounty Hunter, The Cartographer, The Madison Ave, and all future agents — reports upward through Hal. Monitors agent health via heartbeats and cron checks, triages failures, escalates issues to #hal-agent, and maintains the organizational memory that ties everything together.",
       "workspaces": ["Main Session", "Memory Files", "Heartbeat Monitoring", "Agent Ecosystem", "Slack #hal-agent"],
       "schedule": "Continuous (heartbeats every 30 minutes)"
@@ -35,8 +35,8 @@
       "health": "healthy",
       "capabilities": ["Agent Visualization", "Workflow Mapping", "Dashboard Management", "Change Detection"],
       "outputs": ["Interactive Dashboard", "Agent Registry", "GitHub Repository Updates", "Vercel Deployments"],
-      "lastUpdate": "2026-05-14",
-      "description": "Maintains real-time visibility into the AI agent ecosystem via dashboard. Maps all agents and workflows for organizational transparency.",
+      "lastUpdate": "2026-05-17",
+      "description": "Maintains real-time visibility into the AI agent ecosystem via dashboard. Maps all agents and workflows for organizational transparency. Runs every Sunday at 12:00 PM EST.",
       "workspaces": ["Web Dashboard", "GitHub Repository", "Vercel Platform"],
       "schedule": "Sundays 12:00 PM EST"
     },
@@ -48,8 +48,8 @@
       "health": "warning",
       "capabilities": ["Web Research", "Competitive Analysis", "Industry Monitoring", "Newsletter Creation", "Strategic Intelligence"],
       "outputs": ["Weekly Competitive Reports", "Tax Tech Weekly Newsletter", "Notion Intelligence Archives", "Slack Summaries"],
-      "lastUpdate": "2026-05-14",
-      "description": "Monitors 21+ competitors and industry trends. Delivers Tax Tech Weekly newsletter (Tuesdays) and competitive intelligence reports (Sundays). Delivery configs fixed May 14, 2026 — next run Sunday will confirm resolution.",
+      "lastUpdate": "2026-05-17",
+      "description": "Monitors 21+ competitors and industry trends. Delivers Tax Tech Weekly newsletter (Tuesdays) and competitive intelligence reports (Sundays). Delivery configs for Slack channel routing remain unresolved — Monday Summary and Tax Tech Weekly crons return ok but Competitive Intel (Sundays) still shows delivery error.",
       "workspaces": ["Notion Databases", "Slack Channels", "Web Research", "Industry Sources"],
       "schedule": "Tuesdays 8:00 AM EST (Newsletter) · Sundays 2:00 PM EST (Intelligence) · Mondays 12:00 PM EST (Summary)"
     },
@@ -61,8 +61,8 @@
       "health": "healthy",
       "capabilities": ["Meeting Transcription", "Structured Note-Taking", "Action Item Extraction", "Fireflies Integration"],
       "outputs": ["Structured Notion Meeting Notes", "Action Item Tracking", "Meeting Summaries"],
-      "lastUpdate": "2026-05-14",
-      "description": "Processes meeting transcripts from Fireflies into structured Notion documentation. Webhook-triggered — fires on meeting.transcribed events for standup, sprint open, and sprint close meetings via Cloudflare tunnel.",
+      "lastUpdate": "2026-05-17",
+      "description": "Processes meeting transcripts from Fireflies into structured Notion documentation. Webhook-triggered — fires on meeting.transcribed events for standup, sprint open, and sprint close meetings via Cloudflare tunnel. Migrated from Fathom to Fireflies on 2026-05-14.",
       "workspaces": ["Fireflies Webhooks", "Notion Meeting Database", "Cloudflare Tunnel", "Webhook Receiver (port 18790)"],
       "schedule": "Webhook-triggered (Fireflies: meeting.transcribed)"
     },
@@ -71,11 +71,11 @@
       "name": "The Madison Ave",
       "role": "SEO Analysis Specialist",
       "status": "active",
-      "health": "healthy",
+      "health": "error",
       "capabilities": ["Technical SEO Analysis", "Competitive Intelligence", "Content Strategy Assessment", "SWOT Analysis", "Website Crawling"],
       "outputs": ["Comprehensive SEO Reports", "Competitive Analysis", "Notion Strategy Documents", "Technical Recommendations"],
-      "lastUpdate": "2026-05-14",
-      "description": "Conducts in-depth SEO analysis of HeyDrew.com with competitive intelligence and strategic recommendations. Performs technical SEO audits and strategic positioning analysis.",
+      "lastUpdate": "2026-05-17",
+      "description": "Conducts in-depth SEO analysis of HeyDrew.com with competitive intelligence and strategic recommendations. Today's run (2026-05-17, ~11:00 AM EST) completed with a delivery error — Slack channel routing unsupported. Report output may have succeeded but delivery confirmation failed.",
       "workspaces": ["Notion SEO Database", "Web Research", "Technical Analysis", "Competitive Intelligence"],
       "schedule": "Sundays 8:00 AM EST (bi-weekly)"
     },
@@ -84,11 +84,11 @@
       "name": "Integration Health Monitor",
       "role": "Infrastructure Health & Connectivity Monitoring",
       "status": "active",
-      "health": "healthy",
+      "health": "error",
       "capabilities": ["Integration Monitoring", "System Health Assessment", "Connectivity Testing", "Auto-Recovery"],
       "outputs": ["Alerts only on issues (silent otherwise)"],
-      "lastUpdate": "2026-05-14",
-      "description": "Silently monitors system integrations and infrastructure health. Auto-recovers minor issues. Only alerts when problems are detected.",
+      "lastUpdate": "2026-05-17",
+      "description": "Silently monitors system integrations and infrastructure health. Auto-recovers minor issues. Only alerts when problems are detected. Last run ~7:00 AM EST today returned a delivery error on the Slack channel routing config.",
       "workspaces": ["System Integrations", "Health Dashboards", "Alert Systems"],
       "schedule": "Daily 7:00 AM & 7:00 PM EST"
     },
@@ -97,11 +97,11 @@
       "name": "The Bounty Hunter",
       "role": "Security Review Specialist",
       "status": "active",
-      "health": "healthy",
+      "health": "error",
       "capabilities": ["Static Analysis (ESLint)", "Dependency Vulnerability Scanning (npm audit)", "Pattern-Based Security (Semgrep)", "AI-Powered Risk Review", "HTML Dashboard Generation", "GitHub Org Scanning"],
       "outputs": ["Slack Security Alerts (#hal-agent)", "Notion Security Report Pages", "HTML Dashboard Reports", "run.log History"],
-      "lastUpdate": "2026-05-14",
-      "description": "Scans JS/TS codebases for security vulnerabilities using ESLint, npm audit, and Semgrep. Reviews findings with Claude AI for risk explanation and fix suggestions. Reports to Slack and creates Notion pages with full findings.",
+      "lastUpdate": "2026-05-17",
+      "description": "Scans JS/TS codebases for security vulnerabilities using ESLint, npm audit, and Semgrep. Reviews findings with Claude AI for risk explanation and fix suggestions. Reports to Slack and creates Notion pages with full findings. Last run (Friday 2026-05-15) returned delivery error — Slack channel routing config issue.",
       "workspaces": ["OpenClaw Workspace", "~/the-cartographer (local)", "github.com/hal-hue (all repos)", "Notion Security Reports", "Slack #hal-agent"],
       "schedule": "Monday, Wednesday, Friday at 7:00 AM EST"
     },
@@ -112,7 +112,7 @@
       "status": "planned",
       "capabilities": ["Content Curation", "Newsletter Drafting", "Product Update Summarization", "Industry News Aggregation"],
       "outputs": ["Monthly Email Newsletter Draft"],
-      "lastUpdate": "2026-05-14",
+      "lastUpdate": "2026-05-17",
       "description": "Creates monthly newsletters for existing clients and prospects. Pulls content from product changes, blog posts, and industry news. Drafts for human review before send.",
       "workspaces": ["Email Platform (TBD)", "Notion", "Blog CMS"],
       "schedule": "Monthly",
@@ -125,7 +125,7 @@
       "status": "planned",
       "capabilities": ["Keyword Research", "Search Trend Analysis", "Competitor Keyword Gap Analysis", "Opportunity Identification"],
       "outputs": ["Keyword Opportunities Report in Notion"],
-      "lastUpdate": "2026-05-14",
+      "lastUpdate": "2026-05-17",
       "description": "Discovers new keywords HeyDrew should target for organic growth. Analyzes HeyDrew and competitor sites to surface high-value keyword opportunities.",
       "workspaces": ["Notion", "Web Research"],
       "schedule": "Every 2 weeks"
@@ -137,7 +137,7 @@
       "status": "planned",
       "capabilities": ["Competitor Analysis", "Feature Comparison", "Pricing Analysis", "Positioning Assessment"],
       "outputs": ["Notion Comparison Report", "Slack Summary"],
-      "lastUpdate": "2026-05-14",
+      "lastUpdate": "2026-05-17",
       "description": "Produces side-by-side comparisons of competitor offerings vs. HeyDrew. Focuses on top-tier competitors: Instead, Lettuce, and Collective.",
       "workspaces": ["Notion", "Slack (#all-heydrew)", "Web Research"],
       "schedule": "Monthly"
@@ -149,7 +149,7 @@
       "status": "planned",
       "capabilities": ["Google Business Profile Management", "Post Drafting", "Review Response Drafting"],
       "outputs": ["Draft Posts and Review Responses for Approval"],
-      "lastUpdate": "2026-05-14",
+      "lastUpdate": "2026-05-17",
       "description": "Manages HeyDrew's Google Business Profile — drafts posts and review responses for human approval before publishing.",
       "workspaces": ["Google Business Profile", "Notion (drafts)"],
       "schedule": "Weekly"
@@ -161,7 +161,7 @@
       "status": "planned",
       "capabilities": ["Content Calendar Planning", "Blog Topic Generation (20/run)", "SEO-Informed Strategy", "Keyword Integration"],
       "outputs": ["Monthly Content Calendar in Notion"],
-      "lastUpdate": "2026-05-14",
+      "lastUpdate": "2026-05-17",
       "description": "Monthly content planning agent. Generates 20 blog topic ideas and builds a full content calendar informed by SEO Opportunities and Keyword Identifier reports. Calendar requires human approval before triggering The Typist.",
       "workspaces": ["Notion Content Calendar"],
       "schedule": "Monthly"
@@ -173,7 +173,7 @@
       "status": "planned",
       "capabilities": ["Long-form Content Writing", "Feature Announcement Drafting", "Brand Voice Consistency"],
       "outputs": ["Content Drafts in CMS for Review"],
-      "lastUpdate": "2026-05-14",
+      "lastUpdate": "2026-05-17",
       "description": "Creates content from approved Content Strategy calendar items. Also covers new feature announcement blog posts triggered manually. All output drafted for human review before publish.",
       "workspaces": ["CMS (TBD)", "Notion"],
       "schedule": "Triggered by approved Content Strategy calendar",
@@ -186,7 +186,7 @@
       "status": "planned",
       "capabilities": ["News Detection", "Rapid Content Drafting", "Industry Trend Response", "Same-Day Turnaround"],
       "outputs": ["Same-Day Blog Draft in CMS", "Slack Notification"],
-      "lastUpdate": "2026-05-14",
+      "lastUpdate": "2026-05-17",
       "description": "Rapid-response blog drafts on breaking industry news. Triggered by web search detection or human flag. Same-day turnaround with human review before publish.",
       "workspaces": ["CMS (TBD)", "Slack", "Web Research"],
       "schedule": "Triggered by news detection or manual flag",
@@ -199,7 +199,7 @@
       "status": "planned",
       "capabilities": ["Technical SEO Audit", "Backlink Analysis", "Content Gap Analysis", "Internal Linking Review"],
       "outputs": ["Monthly SEO Opportunities Report in Notion"],
-      "lastUpdate": "2026-05-14",
+      "lastUpdate": "2026-05-17",
       "description": "Broad monthly SEO audit covering technical issues, backlinks, content gaps, and internal linking. Feeds into The Strategist and The Prospector planning cycles.",
       "workspaces": ["Notion", "Web Research"],
       "schedule": "Monthly (alongside Content Strategy)"
@@ -211,7 +211,7 @@
       "status": "planned",
       "capabilities": ["Meeting Transcript Analysis", "Action Item Extraction", "Jira Task Creation", "Meeting Note Structuring"],
       "outputs": ["Jira Tasks", "Structured Notion Meeting Notes"],
-      "lastUpdate": "2026-05-14",
+      "lastUpdate": "2026-05-17",
       "description": "Structures team calls and creates Jira tasks from Fireflies transcripts. Triggered by Fireflies webhook on Sprint Planning and Standup meetings.",
       "workspaces": ["Fireflies Webhooks", "Jira (TBD)", "Notion"],
       "schedule": "Triggered by Fireflies webhook (Sprint Planning, Standup)",
@@ -220,11 +220,32 @@
   ],
   "alerts": [
     {
+      "level": "error",
+      "agent": "The Bounty Hunter",
+      "issue": "Delivery failure — Slack channel routing unsupported",
+      "description": "Cron last ran 2026-05-15 (Friday). Delivery config uses unsupported channel format for Slack. Security scans may be completing but reports are not being delivered.",
+      "lastChecked": "2026-05-17T16:00:00Z"
+    },
+    {
+      "level": "error",
+      "agent": "Integration Health Monitor",
+      "issue": "Delivery failure — Slack channel routing unsupported",
+      "description": "Both daily runs (7 AM + 7 PM EST) returning delivery errors since at least 2026-05-14. Monitor may be running but alerts cannot reach destination channel.",
+      "lastChecked": "2026-05-17T16:00:00Z"
+    },
+    {
+      "level": "error",
+      "agent": "The Madison Ave",
+      "issue": "Delivery failure — Slack channel routing unsupported",
+      "description": "Today's bi-weekly SEO run (2026-05-17 ~11:00 AM EST) completed with delivery error. Report content likely generated but Slack delivery failed.",
+      "lastChecked": "2026-05-17T16:00:00Z"
+    },
+    {
       "level": "warning",
       "agent": "The Scout",
-      "issue": "Delivery config fixed — pending confirmation",
-      "description": "Slack delivery configs updated May 14, 2026. Next scheduled run Sunday 2:00 PM EST will confirm resolution.",
-      "lastChecked": "2026-05-14T19:20:00Z"
+      "issue": "Competitive Intel delivery still failing — Monday/Newsletter ok",
+      "description": "Sunday Competitive Intel cron (2:00 PM EST) still showing delivery error on Slack channel routing. Monday Summary and Tax Tech Weekly Newsletter crons return ok. Root cause appears to be inconsistent delivery config across Scout cron jobs.",
+      "lastChecked": "2026-05-17T16:00:00Z"
     }
   ]
 }
