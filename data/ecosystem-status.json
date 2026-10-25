@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-10-18T16:00:00Z",
+  "lastUpdate": "2026-10-25T16:00:00Z",
   "totalAgents": 15,
   "statusCounts": {
     "active": 6,
@@ -8,8 +8,8 @@
     "deprecated": 1
   },
   "healthCounts": {
-    "healthy": 6,
-    "warning": 0,
+    "healthy": 5,
+    "warning": 1,
     "error": 0,
     "planned": 9
   },
@@ -22,7 +22,7 @@
       "health": "healthy",
       "capabilities": ["Agent Ecosystem Oversight", "Sub-Agent Monitoring", "Failure Triage & Escalation", "Institutional Memory", "Heartbeat Monitoring", "Cron Management"],
       "outputs": ["MEMORY.md", "Daily transcripts", "Meeting summaries", "Agent status alerts", "Escalation reports to #hal-agent"],
-      "lastUpdate": "2026-10-18",
+      "lastUpdate": "2026-10-25",
       "description": "Top-level orchestration agent — institutional memory and central nervous system of the ecosystem. Every agent reports upward through Hal. Monitors agent health via heartbeats and cron checks, triages failures, escalates issues to #hal-agent, and maintains organizational memory. Currently active with 30-minute heartbeat cycle.",
       "workspaces": ["Main Session", "Memory Files", "Heartbeat Monitoring", "Agent Ecosystem", "Slack #hal-agent"],
       "schedule": "Continuous (heartbeats every 30 minutes)"
@@ -35,8 +35,8 @@
       "health": "healthy",
       "capabilities": ["Agent Visualization", "Workflow Mapping", "Dashboard Management", "Change Detection"],
       "outputs": ["Interactive Dashboard", "Agent Registry", "GitHub Repository Updates", "Vercel Deployments"],
-      "lastUpdate": "2026-10-18",
-      "description": "Maintains real-time visibility into the AI agent ecosystem via dashboard. Maps all agents and workflows for organizational transparency. Runs every Sunday at 12:00 PM EST. Oct 18 run: Scout confirmed healthy — all 3 crons completed ok on Oct 13 after delivery config fix. The Bounty Hunter cron still active despite Sep 20 deprecation — cron 7d9ff09e last ran Oct 16 (still running on Mon/Wed/Fri, nearly 4 weeks overdue for cleanup). All 15 agents (6 active + 9 planned) reflected on dashboard.",
+      "lastUpdate": "2026-10-25",
+      "description": "Maintains real-time visibility into the AI agent ecosystem via dashboard. Maps all agents and workflows for organizational transparency. Runs every Sunday at 12:00 PM EST. Oct 25 run: Tax Tech Weekly Newsletter cron flagged as error (last run Oct 20). Bounty Hunter cron still active 5+ weeks post-deprecation (last ran Oct 23). Integration Health Monitor and Madison Ave confirmed healthy — both ran today. Scout Sunday Intel and Monday Summary both ok.",
       "workspaces": ["Web Dashboard", "GitHub Repository", "Vercel Platform"],
       "schedule": "Sundays 12:00 PM EST"
     },
@@ -45,11 +45,11 @@
       "name": "The Scout",
       "role": "Competitive Intelligence Specialist",
       "status": "active",
-      "health": "healthy",
+      "health": "warning",
       "capabilities": ["Web Research", "Competitive Analysis", "Industry Monitoring", "Newsletter Creation", "Strategic Intelligence"],
       "outputs": ["Weekly Competitive Reports", "Tax Tech Weekly Newsletter", "Notion Intelligence Archives", "Slack Summaries"],
-      "lastUpdate": "2026-10-18",
-      "description": "Monitors 21+ competitors and industry trends. Delivers Tax Tech Weekly newsletter (Tuesdays 8 AM), competitive intelligence (Sundays 2 PM), and Monday summaries (Mondays 12 PM). ✅ Cleared warning Oct 18: all 3 crons confirmed ok with last run Oct 13 — delivery config fix from Sep 20 verified working. Scout is healthy. Next scheduled runs: Sunday Intel in ~2h, Monday Summary in ~24h, Tax Tech Weekly in ~2d.",
+      "lastUpdate": "2026-10-25",
+      "description": "Monitors 21+ competitors and industry trends. Delivers Tax Tech Weekly newsletter (Tuesdays 8 AM), competitive intelligence (Sundays 2 PM), and Monday summaries (Mondays 12 PM). ⚠️ Warning Oct 25: Tax Tech Weekly Newsletter cron (848737cb) shows status=error, last run Oct 20. Sunday Intel cron confirmed ok (last ran Oct 18). Monday Summary cron confirmed ok (last ran Oct 19). Two of three crons healthy; Tax Tech Weekly requires investigation.",
       "workspaces": ["Notion Databases", "Slack Channels", "Web Research", "Industry Sources"],
       "schedule": "Tuesdays 8:00 AM EST (Newsletter) · Sundays 2:00 PM EST (Intelligence) · Mondays 12:00 PM EST (Summary)"
     },
@@ -61,7 +61,7 @@
       "health": "healthy",
       "capabilities": ["Meeting Transcription", "Structured Note-Taking", "Action Item Extraction", "Fireflies Integration", "Blocker Detection"],
       "outputs": ["Structured Notion Meeting Notes", "Action Item Tracking", "Meeting Summaries"],
-      "lastUpdate": "2026-10-18",
+      "lastUpdate": "2026-10-25",
       "description": "Processes Fireflies transcripts into structured Notion documentation for Standup, Sprint Open, and Sprint Close meetings. Polling architecture via launchd — polls Fireflies API every 15 min Mon–Fri 8 AM–8 PM ET. Meeting type routing: Sprint Close → Sprint Open → Standup (precedence order). Blocker heuristic active. State tracked in ~/.openclaw/scribe/processed.json. Migrated from Fathom webhook to Fireflies polling architecture (Jul 31, 2026). No cron entry — runs independently via launchd.",
       "workspaces": ["Fireflies API (polling)", "Notion Meeting Databases", "~/.openclaw/scribe/"],
       "schedule": "Polls every 15 min Mon–Fri 8 AM–8 PM ET"
@@ -74,8 +74,8 @@
       "health": "healthy",
       "capabilities": ["Technical SEO Analysis", "Competitive Intelligence", "Content Strategy Assessment", "SWOT Analysis", "Website Crawling"],
       "outputs": ["Comprehensive SEO Reports", "Competitive Analysis", "Notion Strategy Documents", "Technical Recommendations"],
-      "lastUpdate": "2026-10-18",
-      "description": "Conducts in-depth SEO analysis of HeyDrew.com with competitive intelligence and strategic recommendations. Bi-weekly Sunday 8 AM EST schedule. ✅ Confirmed healthy — ran today Oct 18 at ~8 AM EST (4h before Cartographer run), status: ok. Next run in 7 days.",
+      "lastUpdate": "2026-10-25",
+      "description": "Conducts in-depth SEO analysis of HeyDrew.com with competitive intelligence and strategic recommendations. Bi-weekly Sunday 8 AM EST schedule. ✅ Confirmed healthy — ran today Oct 25 at ~8 AM EST (~4h before Cartographer run), status: ok. Next bi-weekly run: Nov 8.",
       "workspaces": ["Notion SEO Database", "Web Research", "Technical Analysis", "Competitive Intelligence"],
       "schedule": "Sundays 8:00 AM EST (bi-weekly)"
     },
@@ -87,8 +87,8 @@
       "health": "healthy",
       "capabilities": ["Integration Monitoring", "System Health Assessment", "Connectivity Testing", "Auto-Recovery"],
       "outputs": ["Twice-daily health reports to #hal-agent", "Alerts on issues"],
-      "lastUpdate": "2026-10-18",
-      "description": "Runs at 7 AM and 7 PM EST daily. ✅ Confirmed healthy — ran at ~7 AM EST today (Oct 18, ~5h before Cartographer run), status: ok. Next run: 7 PM EST tonight.",
+      "lastUpdate": "2026-10-25",
+      "description": "Runs at 7 AM and 7 PM EST daily. ✅ Confirmed healthy — ran at ~7 AM EST today (Oct 25, ~5h before Cartographer run), status: ok. Next run: 7 PM EST tonight.",
       "workspaces": ["System Integrations", "Health Dashboards", "Slack #hal-agent"],
       "schedule": "Daily 7:00 AM & 7:00 PM EST"
     },
@@ -100,8 +100,8 @@
       "health": "error",
       "capabilities": ["Security Scanning", "Vulnerability Detection", "AI False-Positive Triage", "Notion Audit Trail"],
       "outputs": ["Security scan reports to Slack #hal-agent", "Notion audit records"],
-      "lastUpdate": "2026-10-18",
-      "description": "Deprecated Sep 20, 2026. ⚠️ Cron job (7d9ff09e) still active as of Oct 18 — last ran Oct 16 (still executing on Mon/Wed/Fri schedule, nearly 4 weeks post-deprecation). Was never disabled after deprecation decision. Outstanding .env issues from Jul 29 (stale Anthropic key, unverified NOTION_SECURITY_DB ID) were never resolved. Security scanning coverage gap — replacement or remediation TBD. Cron cleanup overdue.",
+      "lastUpdate": "2026-10-25",
+      "description": "Deprecated Sep 20, 2026. ⚠️ Cron job (7d9ff09e) still active as of Oct 25 — last ran Oct 23 (still executing on Mon/Wed/Fri schedule, 5+ weeks post-deprecation). Was never disabled after deprecation decision. Cron cleanup critically overdue — 35+ days since deprecation.",
       "workspaces": ["Slack #hal-agent", "Notion Security DB", "Local security scanners"],
       "schedule": "Mon/Wed/Fri 7:00 AM EST (deprecated — cron still active, needs cleanup)"
     },
@@ -112,7 +112,7 @@
       "status": "planned",
       "capabilities": ["Content Curation", "Newsletter Drafting", "Product Update Summarization", "Industry News Aggregation"],
       "outputs": ["Monthly Email Newsletter Draft"],
-      "lastUpdate": "2026-10-18",
+      "lastUpdate": "2026-10-25",
       "description": "Creates monthly newsletters for existing clients and prospects. Pulls content from product changes, blog posts, and industry news. Drafts for human review before send.",
       "workspaces": ["Email Platform (TBD)", "Notion", "Blog CMS"],
       "schedule": "Monthly",
@@ -125,7 +125,7 @@
       "status": "planned",
       "capabilities": ["Keyword Research", "Search Trend Analysis", "Competitor Keyword Gap Analysis", "Opportunity Identification"],
       "outputs": ["Keyword Opportunities Report in Notion"],
-      "lastUpdate": "2026-10-18",
+      "lastUpdate": "2026-10-25",
       "description": "Discovers new keywords HeyDrew should target for organic growth. Analyzes HeyDrew and competitor sites to surface high-value keyword opportunities.",
       "workspaces": ["Notion", "Web Research"],
       "schedule": "Every 2 weeks"
@@ -137,7 +137,7 @@
       "status": "planned",
       "capabilities": ["Competitor Analysis", "Feature Comparison", "Pricing Analysis", "Positioning Assessment"],
       "outputs": ["Notion Comparison Report", "Slack Summary"],
-      "lastUpdate": "2026-10-18",
+      "lastUpdate": "2026-10-25",
       "description": "Produces side-by-side comparisons of competitor offerings vs. HeyDrew. Focuses on top-tier competitors: Instead, Lettuce, and Collective.",
       "workspaces": ["Notion", "Slack (#all-heydrew)", "Web Research"],
       "schedule": "Monthly"
@@ -149,7 +149,7 @@
       "status": "planned",
       "capabilities": ["Google Business Profile Management", "Post Drafting", "Review Response Drafting"],
       "outputs": ["Draft Posts and Review Responses for Approval"],
-      "lastUpdate": "2026-10-18",
+      "lastUpdate": "2026-10-25",
       "description": "Manages HeyDrew's Google Business Profile — drafts posts and review responses for human approval before publishing.",
       "workspaces": ["Google Business Profile", "Notion (drafts)"],
       "schedule": "Weekly"
@@ -161,7 +161,7 @@
       "status": "planned",
       "capabilities": ["Content Calendar Planning", "Blog Topic Generation (20/run)", "SEO-Informed Strategy", "Keyword Integration"],
       "outputs": ["Monthly Content Calendar in Notion"],
-      "lastUpdate": "2026-10-18",
+      "lastUpdate": "2026-10-25",
       "description": "Monthly content planning agent. Generates 20 blog topic ideas and builds a full content calendar informed by SEO Opportunities and Keyword Identifier reports. Calendar requires human approval before triggering The Typist.",
       "workspaces": ["Notion Content Calendar"],
       "schedule": "Monthly"
@@ -173,7 +173,7 @@
       "status": "planned",
       "capabilities": ["Long-form Content Writing", "Feature Announcement Drafting", "Brand Voice Consistency"],
       "outputs": ["Content Drafts in CMS for Review"],
-      "lastUpdate": "2026-10-18",
+      "lastUpdate": "2026-10-25",
       "description": "Creates content from approved Content Strategy calendar items. Also covers new feature announcement blog posts triggered manually. All output drafted for human review before publish.",
       "workspaces": ["CMS (TBD)", "Notion"],
       "schedule": "Triggered by approved Content Strategy calendar",
@@ -186,7 +186,7 @@
       "status": "planned",
       "capabilities": ["News Detection", "Rapid Content Drafting", "Industry Trend Response", "Same-Day Turnaround"],
       "outputs": ["Same-Day Blog Draft in CMS", "Slack Notification"],
-      "lastUpdate": "2026-10-18",
+      "lastUpdate": "2026-10-25",
       "description": "Rapid-response blog drafts on breaking industry news. Triggered by web search detection or human flag. Same-day turnaround with human review before publish.",
       "workspaces": ["CMS (TBD)", "Slack", "Web Research"],
       "schedule": "Triggered by news detection or manual flag",
@@ -199,7 +199,7 @@
       "status": "planned",
       "capabilities": ["Technical SEO Audit", "Backlink Analysis", "Content Gap Analysis", "Internal Linking Review"],
       "outputs": ["Monthly SEO Opportunities Report in Notion"],
-      "lastUpdate": "2026-10-18",
+      "lastUpdate": "2026-10-25",
       "description": "Broad monthly SEO audit covering technical issues, backlinks, content gaps, and internal linking. Feeds into The Strategist and The Prospector planning cycles.",
       "workspaces": ["Notion", "Web Research"],
       "schedule": "Monthly (alongside Content Strategy)"
@@ -211,7 +211,7 @@
       "status": "planned",
       "capabilities": ["Meeting Transcript Analysis", "Action Item Extraction", "Jira Task Creation", "Meeting Note Structuring"],
       "outputs": ["Jira Tasks", "Structured Notion Meeting Notes"],
-      "lastUpdate": "2026-10-18",
+      "lastUpdate": "2026-10-25",
       "description": "Structures team calls and creates Jira tasks from Fireflies transcripts. Triggered by Fireflies webhook on Sprint Planning and Standup meetings.",
       "workspaces": ["Fireflies Webhooks", "Jira (TBD)", "Notion"],
       "schedule": "Triggered by Fireflies webhook (Sprint Planning, Standup)",
@@ -221,10 +221,17 @@
   "alerts": [
     {
       "level": "warning",
+      "agent": "The Scout",
+      "issue": "Tax Tech Weekly Newsletter cron error — last run Oct 20 failed",
+      "description": "The Scout's Tax Tech Weekly Newsletter cron (848737cb, Tuesdays 8 AM EST) returned status=error on its last run Oct 20. Sunday Intel and Monday Summary crons are both ok. Tax Tech Weekly requires investigation.",
+      "lastChecked": "2026-10-25T16:00:00Z"
+    },
+    {
+      "level": "warning",
       "agent": "The Bounty Hunter",
-      "issue": "Cron still active despite deprecation on Sep 20 — nearly 4 weeks overdue for cleanup",
-      "description": "The Bounty Hunter was deprecated Sep 20, 2026, but cron job 7d9ff09e is still active and last ran Oct 16 (still firing on Mon/Wed/Fri schedule). Nearly 4 weeks post-deprecation with no cleanup. Recommend removing or disabling this cron immediately to complete the deprecation.",
-      "lastChecked": "2026-10-18T16:00:00Z"
+      "issue": "Cron still active 5+ weeks after deprecation (Sep 20) — critically overdue for cleanup",
+      "description": "The Bounty Hunter was deprecated Sep 20, 2026, but cron job 7d9ff09e is still active and last ran Oct 23 (still firing on Mon/Wed/Fri schedule). Now 35+ days post-deprecation with no cron cleanup. Recommend removing or disabling cron 7d9ff09e immediately.",
+      "lastChecked": "2026-10-25T16:00:00Z"
     }
   ]
 }
